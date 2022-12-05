@@ -1,0 +1,53 @@
+<ion-row class="home-user-info" *ngIf="homeUserInformation?.fullName">
+  <ion-col col-3 class="home-user-info-avatar">
+    <img [src]="homeUserInformation?.profilePhoto" />
+  </ion-col>
+  <ion-col col-9>
+    <h6 class="home-user-info-title">{{ homeUserInformation?.fullName }}</h6>
+    <p class="home-user-info-item">{{ homeUserInformation?.currentVehicle }}</p>
+    <p class="home-user-info-item">{{ homeUserInformation?.currentVehicleType }}</p>
+    <p class="home-user-info-item">({{ homeUserInformation?.carrierName }} <b>{{ homeUserInformation?.carrierCode }}</b>)</p>
+  </ion-col>
+</ion-row>
+<ion-row class="home-base-info">
+  <ion-col col-7>
+    <div *ngIf="homeBaseInformation?.inBase" class="base-info">
+      <ion-row>
+        <ion-col col-8 style="padding: 0;">
+          <div class="base-info">
+            <p class="base-name">
+              {{ homeBaseInformation.currentBaseName }}
+            </p>
+          </div>
+        </ion-col>
+        <ion-col col-4 style="padding: 0;">
+          <div *ngIf="homeBaseInformation.positionInBase && homeBaseInformation.totalDriversInBase" class="base-queue">
+            <p class="base-queue-label">
+              {{ 'home.in_queue' | translate }}
+            </p>
+            <p class="base-queue-position">
+              {{ homeBaseInformation.positionInBase }} / {{ homeBaseInformation.totalDriversInBase }}
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-col>
+  <ion-col col-5>
+    <ion-item (click)="setInBase()" class="in-base-item" no-lines>
+      <ion-toggle
+        disabled="{{ !homeBaseInformation?.inBase && !homeBaseInformation?.inBaseRange }}"
+        item-start
+        [(ngModel)]="homeBaseInformation.inBase"
+        color="secondary"
+        style="pointer-events: none;"
+      ></ion-toggle>
+      <ion-label [class.in-base]="homeBaseInformation?.inBase">
+        <div>
+          <span *ngIf="!showSpinner">{{ 'menu.inBase' | translate }}</span>
+          <ion-spinner [class.in-base]="homeBaseInformation?.inBase" color="light" *ngIf="showSpinner" class="in-base-spinner"></ion-spinner>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-col>
+</ion-row>

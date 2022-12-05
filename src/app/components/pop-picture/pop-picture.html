@@ -1,0 +1,12 @@
+<!-- Modal -->
+<div #modal class="modal">
+
+  <!-- Close Button -->
+  <span class="close" (click)="close()">&times;</span>
+
+  <!-- Image -->
+  <img class="modal-content" [src]="picture">
+
+  <!-- Caption -->
+  <div class="caption"> {{ caption }}</div>
+</div>

@@ -1,0 +1,34 @@
+<ion-content>
+  <ion-icon name="arrow-back-outline" class="back" (click)="goBack()"></ion-icon>
+
+  <form [formGroup]="restorePassForm">
+    <img src="assets/images/forgot-pass-img.png" class="logo">
+    <span class="forgot-title">{{ 'restore_pass.mail_message1' | translate }}</span>
+    <span class="forgot-text">{{ 'restore_pass.mail_message2' | translate }}</span>
+
+    <ion-row>
+      <ion-col>
+        <ion-input type="email" placeholder="{{ 'restore_pass.email' | translate }}" formControlName="email" clearInput></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div
+        *ngIf="restorePassForm.controls['email'].touched
+          && restorePassForm.controls['email'].dirty
+          && restorePassForm.controls['email'].errors?.email" class="errorMessage">
+            <span>Ingrese un email válido</span>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button class="btn primary" [disabled]="restorePassForm.invalid" (click)="submit()">{{ 'restore_pass.recover' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+<ion-footer>
+  <img src="assets/images/logo/logo.svg" class="logo">
+</ion-footer>

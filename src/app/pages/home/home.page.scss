@@ -1,0 +1,221 @@
+@import "../../../theme/variables.scss";
+
+ion-content {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --background: #f9f7f8;
+}
+
+.header-menu {
+  background-color: $light;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+
+  button {
+    height: 65px;
+    background-color: transparent;
+  }
+
+  .header-carrier-logo {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .menu-bar-1,
+  .menu-bar-2 {
+    background-color: $black;
+    width: 27px;
+    height: 3px;
+    border-radius: 99px;
+    margin-bottom: 10px;
+    margin-left: auto;
+  }
+
+  .menu-bar-2 {
+    width: 17px;
+    margin-bottom: 0;
+  }
+}
+
+.home-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 50%;
+  }
+
+  span {
+    font-size: $font14;
+    text-align: center;
+  }
+}
+
+.available-label {
+  color: $green;
+}
+
+.driver-greet {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  background-color: $light;
+
+  .driver-available {
+    margin-right: 16px;
+
+    span {
+      color: $green;
+    }
+  }
+
+  .driver-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+
+    
+  }
+}
+
+.driver-name {
+  font-size: $font14;
+  font-weight: $bold;
+  color: $black;
+  margin-bottom: 8px;
+}
+.driver-car {
+  color: $dark-soft;
+  font-size: $font16;
+}
+
+.driver-base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px 16px;
+  background-color: $light;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  .driver-location {
+    display: flex;
+    align-items: center;
+
+    .driver-home {
+      margin-right: 16px;
+      span {
+        color: $primary;
+      }
+    }
+  }
+
+  .driver-number {
+    display: flex;
+    flex-direction: column;
+    font-size: $font20;
+    font-weight: $bold;
+    color: $primary;
+  }
+
+  .driver-pass {
+    span {
+      color: $yellow;
+    }
+  }
+}
+
+.driver-list {
+  padding: 16px 0;
+
+  .label {
+    font-size: $font16;
+    color: $black;
+    font-weight: $bold;
+    padding: 0 16px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  ion-list {
+    background-color: transparent;
+  }
+
+  .travel-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px $dark-softer;
+    padding: 8px 16px;
+
+    .calendar {
+      font-size: $font20;
+      color: $dark-soft;
+    }
+
+    .distance {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        color: $black;
+        font-size: $font16;
+
+        &:first-child {
+          font-weight: $bold;
+          font-size: $font20;
+          margin-bottom: 4px;
+        }
+      }
+    }
+
+    .direction {
+      color: $secondary;
+      font-weight: $bold;
+      font-size: $font16;
+      display: flex;
+      align-items: center;
+
+      ion-icon {
+        margin-right: 6px;
+        font-size: $font24;
+      }
+    }
+
+    .warning {
+      color: $yellow;
+    }
+
+    .time {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        color: $black;
+        font-size: $font20;
+
+        &:first-child {
+          font-weight: $bold;
+          margin-bottom: 4px;
+        }
+      }
+    }
+
+    &.active {
+      background-color: rgba($secondary, 0.2);
+      border-color: $secondary;
+    }
+  }
+}

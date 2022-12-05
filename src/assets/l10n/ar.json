@@ -1,0 +1,34 @@
+{
+  "currency": {
+    "name": "Peso Argentino",
+    "name_plural": "Pesos Argentinos",
+    "symbol": "AR$",
+    "key": "ARS",
+    "decimalPlaces": 0
+  },
+  "culture": "es",
+  "locale": "es-AR",
+  "dateFormat": "dd/MM/yyyy",
+  "measureUnits": "METRIC",
+  "taxLanguage": {
+    "taxCodes": [
+      {
+        "value": "ARG-MT",
+        "label": "Monotributista"
+      },
+      {
+        "value": "ARG-RI",
+        "label": "Responsable Inscripto"
+      },
+      {
+        "value": "ARG-RNI",
+        "label": "Responsable No Inscripto"
+      },
+      {
+        "value": "ARG-EX",
+        "label": "Exento"
+      }
+    ],
+    "specific_tax_lang_key_EXAMPLE": "Specific language key example for taxary language"
+  }
+}

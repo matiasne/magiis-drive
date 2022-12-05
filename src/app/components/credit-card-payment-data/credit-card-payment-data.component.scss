@@ -1,0 +1,100 @@
+credit-card-payment-data {
+
+  .header{
+    .first{
+      text-align: left;
+    }
+    .middle{
+      text-align: center;
+      margin-top: 10px;
+    }
+    .end{
+      text-align: right;
+      margin-top: 10px;
+    }
+  }
+
+  .logo-credit-card{
+    width: 70%;
+    height: 70%;
+    margin-top: 50%;
+    margin-left: 10px;
+  }
+
+  .item{
+    padding-left: 0%;
+    margin-left: 0%;
+  }
+
+  .title {
+    color: color($colors, light);
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .invalid-charge {
+    color: #3ba291;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .thumbnail-label{
+    min-width: 0px !important;
+    min-height: 0px !important;
+    margin-top: 35px;
+  }
+
+  .help-circle{
+    zoom: 1.5;
+  }
+
+  .note{
+    display: table-row;
+    margin-left: left 2px;
+  }
+
+  .item-md.item-block .item-inner {
+    padding-right: 0px;
+  }
+
+  ion-input, ion-textarea {
+    background: #fafafa;
+  }
+
+  .item-label-stacked .select-md, .item-label-floating .select-md {
+    background: #fafafa;
+  }
+
+  .help-content{
+    //background-color: rgba(44, 39, 45, 0.84);
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .help-img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .help-text-container{
+    margin-left: 10px;
+  }
+
+  .button-accept-container{
+    margin-top: 20px;
+  }
+
+  .button-accept {
+    background: color($colors, secondary);
+    color: color($colors, light);
+    border: 1px solid color($colors, secondary);
+    border-radius: 3px;
+    width: 40%;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    right: 10px;
+  }
+}

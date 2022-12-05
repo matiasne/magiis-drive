@@ -1,0 +1,86 @@
+<button ion-item detail-none
+  (click)="toggleAccordion()"
+  class="accordion-header"
+  [class.active]="expanded">
+  <ion-label class="header-container">
+    <div>
+      <p class="travel-passenger">
+        <img src="assets/images/icono-passenger-green.png" class="distance-img">
+        <span>
+          {{ 'travel_resume.label_passenger' | translate }}
+          <strong>
+            {{ passenger }}
+          </strong>
+        </span>
+      </p>
+
+      <p class="travel-number">
+        <img src="assets/svg/icono_viajes.svg" class="distance-img">
+        <span>
+          {{ 'travel_resume.label_travel' | translate }}
+          <strong>
+            {{ travel }}
+          </strong>
+        </span>
+      </p>
+    </div>
+    <div>
+      <p class="travel-distance">
+        <img src="assets/images/distance.png" class="distance-img">
+        <span>
+          {{ 'travel_resume.label_distance' | translate }}
+          <strong>
+            {{ distance | distance | number:'.0-1' }} {{ 'kms' | distanceDescription: true }}
+          </strong>
+        </span>
+      </p>
+
+      <p class="travel-duration">
+        <img src="assets/svg/icono_reloj.svg" class="duration-img">
+        <span>
+            {{ 'travel_resume.label_duration' | translate }}
+          <strong *ngIf="isAnHour">
+            {{ travelDuration }} hs
+          </strong>
+          <strong *ngIf="!isAnHour">
+            {{ travelDuration }} mins
+          </strong>
+        </span>
+      </p>
+    </div>
+
+    <ion-icon class="arrow-icon" name="ios-arrow-down" color="dark-soft"></ion-icon>
+  </ion-label>
+</button>
+<!-- Expandable content section -->
+<div #accordionContent [class.active]="expanded" class="accordion-content">
+
+  <ion-row>
+
+    <ion-col no-padding class="trip-col travel-origin">
+        <ion-label class="travel-label travel-origin-label">
+          <ion-icon ios="md-radio-button-off" md="md-radio-button-off" color="primary" class="icon-trip icon-origin"></ion-icon>
+          <span [ngClass]="{'text-strong': highlightAddresses}">{{ originPlace }}</span>
+        </ion-label>
+    </ion-col>
+
+    <ng-container *ngFor="let waypoint of waypoints">
+      <ion-col no-padding class="trip-col travel-waypoint">
+        <ion-label class="travel-label travel-waypoint-label">
+          <ion-icon ios="md-radio-button-off" md="md-radio-button-off" color="primary" class="icon-trip icon-origin"></ion-icon>
+          <span [ngClass]="{'text-strong': highlightAddresses}">{{ waypoint.shortName }}</span>
+        </ion-label>
+      </ion-col>
+    </ng-container>
+
+    <ion-col no-padding class="trip-col travel-destination">
+      <ion-label class="travel-label travel-destination-label">
+        <ion-icon ios="ios-pin" md="md-pin" color="secondary" class="icon-trip icon-destination"></ion-icon>
+        <span [ngClass]="{'text-strong': highlightAddresses}">{{ destinationPlace }}</span>
+      </ion-label>
+    </ion-col>
+
+
+  </ion-row>
+
+</div>

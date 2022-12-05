@@ -1,0 +1,10 @@
+{
+  "name": "driver-v21",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

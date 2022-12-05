@@ -1,0 +1,159 @@
+@import '../../../theme/variables.scss';
+
+ion-content {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --background: #f9f7f8;
+}
+
+ion-col {
+  padding: 0;
+}
+
+.header-menu {
+  background-color: $bgLight;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  color: $black;
+
+  .header-title {
+    font-size: $font20;
+    font-weight: $bold;
+    color: $black;
+    margin-left: 8px;
+  }
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $light;
+  padding: 8px;
+  border-radius: 10px;
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 16px;
+  }
+
+  .passenger-info {
+    color: $black;
+    display: flex;
+    flex-direction: column;
+
+    .passenger-name {
+      font-size: $font20;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+
+  .action-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px 8px;
+  }
+
+  .action-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-icon  {
+      font-size: 40px;
+    }
+
+    .label {
+      font-size: $font14;
+      text-align: center;
+      margin-top: 8px;
+    }
+  }
+
+  .cancel {
+    color: $danger-red;
+
+    .action-icon {
+      border: solid 1px $danger-red;
+    }
+  }
+
+  .chat, .map {
+    .action-icon {
+      background-color: $primary;
+
+      ion-icon {
+        color: $light;
+      }
+    }
+  }
+}
+
+.travel {
+  background-color: $light;
+  padding: 8px;
+  border-radius: 10px;
+
+  .destinations {
+    position: relative;
+  }
+
+  .travel-origin, .travel-waypoint, .travel-destination {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+
+    ion-icon {
+      color: $secondary;
+      margin-right: 4px;
+      background-color: $light;
+    }
+  }
+
+  .travel-destination {
+    ion-icon {
+      color: $danger-red;
+    }
+  }
+
+  .dash-line {
+    position: absolute;
+    top: 10%;
+    left: 7px;
+    border-left: dotted 2px #7a7a7a;
+    height: 80%;
+  }
+
+  .note {
+    margin-top: 16px;
+
+    p {
+      margin-bottom: 0;
+      font-size: $font14;
+      color: $black;
+    }
+  }
+}
+
+button.btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

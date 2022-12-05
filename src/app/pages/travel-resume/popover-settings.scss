@@ -1,0 +1,10 @@
+/*
+* Estilos para popover.
+* Este archivo debe ser importado en app.scss
+* ya que en el DOM, la instancia de popover se crea por fuera de la page.
+* Es por eso que se deben usar estilos globales.
+*/
+
+.popover-content {
+  left: 50px !important;
+}

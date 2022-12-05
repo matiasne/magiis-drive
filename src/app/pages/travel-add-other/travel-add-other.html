@@ -1,0 +1,62 @@
+<ion-content class="no-scroll">
+  <ion-grid class="container">
+    <h2>{{ 'travel_add_other_cost.label_add_other_cost' | translate }}</h2>
+    <ion-row class="form-container">
+      <form [formGroup]="formOtherCost">
+
+        <!-- Nombre -->
+        <div class="input-form">
+          <ion-item no-lines>
+            <ion-input placeholder="{{ 'travel_add_other_cost.label_form_name' | translate }} *" type="text" formControlName="costName" (ionChange)="updateView()"></ion-input>
+          </ion-item>
+          <div class="help-text">
+              {{ 'travel_add_other_cost.label_form_name_example' | translate }}
+            <ng-container *ngTemplateOutlet="nameError"></ng-container>
+          </div>
+        </div>
+
+        <!-- Monto -->
+        <div class="input-form">
+          <ion-item no-lines class="leading-icon">
+            <ion-input placeholder="{{ 'travel_add_parking.label_form_amount' | translate }} *" type="number" formControlName="costPrice" (ionChange)="updateView()"></ion-input>
+          </ion-item>
+          <div class="help-text">
+            {{ 'travel_add_other_cost.label_form_ammount_example' | translate }}
+            <ng-container *ngTemplateOutlet="priceError"></ng-container>
+          </div>
+        </div>
+      </form>
+    </ion-row>
+    <ion-row class="buttons">
+      <button class="btn" (click)="cancelNewOtherCost()">
+        {{ 'travel_add_other_cost.label_button_cancel' | translate }}
+      </button>
+      <button class="btn primary" (click)="saveOtherCost()" [disabled]="!discountAllowed() || !formOtherCost.valid">
+        {{ 'travel_add_other_cost.label_button_save' | translate }}
+      </button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- ERROR MESSAGES -->
+<ng-template #nameError>
+  <ng-container *ngIf="!otherCostName.valid  && (otherCostName.dirty || otherCostName.touched)">
+    <div class="msg-error">
+      <span *ngIf="otherCostName.errors?.pattern">{{ 'travel_add_other_cost.errors_name.pattern' | translate }}</span>
+      <span *ngIf="otherCostName.errors?.required">{{ 'travel_add_other_cost.errors_name.required' | translate }}</span>
+      <span *ngIf="otherCostName.errors?.maxlength">{{ 'travel_add_other_cost.errors_name.maxlength' | translate }}</span>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #priceError>
+  <ng-container *ngIf=" !discountAllowed() || !otherCostPrice.valid  && (otherCostPrice.dirty || otherCostPrice.touched)">
+    <div class="msg-error">
+      <span *ngIf="otherCostPrice.errors?.pattern">{{ 'travel_add_other_cost.errors_amount.pattern' | translate }}</span>
+      <span *ngIf="otherCostPrice.errors?.required">{{ 'travel_add_other_cost.errors_amount.required' | translate }}</span>
+      <span *ngIf="otherCostPrice.errors?.maxlength">{{ 'travel_add_other_cost.errors_amount.maxlength' | translate }}</span>
+      <span *ngIf="!discountAllowed()">{{ 'travel_add_other_cost.errors_amount.discount_exceed_travel_cost' | translate }}</span>
+    </div>
+  </ng-container>
+</ng-template>
+<!-- END ERROR MESSAGES -->

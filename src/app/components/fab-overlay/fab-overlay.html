@@ -1,0 +1,15 @@
+<div id="fab-overlay" class="fab-overlay {{showFabOverlayClass}}"></div>
+<ion-fab top right #fab class="call-fab">
+  <button ion-fab (click)="toggleFabOverlay()" class="call-fab-primary">
+    <img class="icono-call" src="assets/images/icono-call.png">
+  </button>
+  <ion-fab-list side="left">
+    <button ion-fab class="call-911" (click)="call('CALL_911')">SOS</button>
+    <button ion-fab class="call-carrier" (click)="call('CALL_CARRIER')">
+      <img src="assets/images/icono-call.png">
+    </button>
+    <button ion-fab class="call-passenger" (click)="call('CALL_PASSENGER')">
+      <img class="call-passenger-img" src="assets/images/icono-passenger.png">
+    </button>
+  </ion-fab-list>
+</ion-fab>

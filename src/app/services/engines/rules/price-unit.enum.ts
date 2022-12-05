@@ -1,0 +1,6 @@
+export enum PriceUnitEnum {
+    MONEY = "MONEY",
+    PERCENTAGE = "PERCENTAGE",
+    KM = "KM",
+    DISTANCE_PERCENTEGE = "DISTANCE_PERCENTAGE"
+}

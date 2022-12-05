@@ -1,0 +1,220 @@
+travel-transfer-cost {
+  /* HEADER */
+  .header {
+    // background: color($colors, primary) !important;
+
+    .title {
+      // color: color($colors, light);
+      display: block;
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+      text-align: left;
+      padding: 0 55px 0 16px;
+    }
+  }
+
+  /* VIEW CONTAINER */
+  .scroll-content { margin-bottom: 185px; }
+  .view-container {
+    padding: 10px 16px 10px 16px;
+
+    .add-toll { padding-right: 8px; }
+    .add-parking {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    .add-other { padding-left: 8px; }
+  }
+  .affiliate-wrapper {
+    padding: 5px 16px;
+    background: #DBEFEC;
+    // color: color($colors, primary);
+    padding-bottom: 0;
+
+    img {
+      height: 20px;
+    }
+    span {
+      margin-left: 0.5em;
+      font-weight: bold;
+      line-height: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  /* PARKING, TOLL AND OTHER COST BUTTONS */
+  .extra-costs-container {
+    padding-bottom: 16px;
+
+    .btn-toll, .btn-parking, .btn-other {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 4px;
+      padding: 0;
+      margin: 0;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      color: #666;
+      background-color: #F6F6F6;
+
+      .item-inner {
+        padding: 0 !important;
+      }
+      .label {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      p {
+        margin-top: 7px;
+        margin-bottom: 9px;
+      }
+      img {
+        margin-top: 9px;
+        height: 30px;
+      }
+    }
+  }
+
+  @media (max-width: 387px) {
+    .btn-toll, .btn-parking, .btn-other {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+
+  /* TRAVEL DETAILS CONTAINER */
+  .travel-details-container {
+    border-top: 2px solid #EEEEEE;
+    padding-top: 10px;
+    color: #666666;
+
+    .list {
+      margin: 0;
+      width: 100%;
+
+      .col { padding: 0; }
+      .item {
+        padding: 0;
+        min-height: 30px;
+      }
+      .label {
+        margin: 0;
+        font-size: 14px;
+        display: inline;
+        background: white;
+        padding: 0 2px 0;
+      }
+
+      .travel-detail-item {
+        font-size: 13px;
+        color: #888888;
+        .item-name-col {
+          padding-left: 10px;
+
+          .icon-image-file {
+            margin-bottom: -3px;
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+
+    .item-inner{
+      position: relative;
+      padding-right: 0!important;
+    }
+    .item-inner:before{
+      content:'';
+      display: block;
+      width: 77%;
+      height: 100%;
+      border-bottom: dotted 2px #DDDDDD;
+      position: absolute;
+      bottom: 10px;
+      left: 34px;
+    }
+  }
+
+  /* FOOTER */
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16);
+    z-index: 999;
+
+    .grid {
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    /* TRAVEL COST CARD */
+    .travel-cost-card {
+      // background: color($colors, primary);
+      margin:0;
+      font-size: 1.4rem;
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: none;
+
+      .card-content {
+        line-height: 1 !important;
+        padding: 8px;
+      }
+      .travel-cost-text {
+        // color: color($colors, light);
+        font-size: 1.4rem;
+        margin: 0px 0 4px;
+        font-weight: 400;
+      }
+      .travel-cost-amount {
+        font-weight: bold;
+        // color: color($colors, light);
+        font-size: 25px;
+        margin: 0;
+      }
+    }
+
+    .select-md .select-icon {
+      width: 15px !important;
+    }
+
+    /* SIGNATURE BUTTON & CLOSE TRAVEL BUTTON*/
+    .continue-btn {
+      width: 100%;
+      padding: 40px;
+    }
+  }
+}
+
+.modalOther .modal-wrapper {
+  height: 320px;
+}
+
+.handshake {
+  max-height: 27px;
+  margin: 0 auto;
+  height: auto !important;
+  width: auto !important;
+  display: block;
+}
+
+.amount {
+  font-size: large !important;
+  font-weight: bold;
+  color: #7c7c7c;
+}
+.amount_description{
+  font-size: large;
+}

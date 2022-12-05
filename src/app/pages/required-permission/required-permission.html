@@ -1,0 +1,24 @@
+<ion-content scroll="false">
+  <div *ngIf="!locationPermissionAllowed" class="required-permission-content">
+    <h1 class="title">{{ 'permission.location.title' | translate }}</h1>
+    <p class="text">
+      {{ 'permission.location.message' | translate }}
+    </p>
+    <br>
+    <p class="text" [innerHTML]="locationInstructions"></p>
+    <div class="update-container">
+      <button (click)="goToLocationSettings()" class="btn primary">{{ 'permission.location.confirm_label' | translate }}</button>
+    </div>
+  </div>
+  <div *ngIf="locationPermissionAllowed" class="required-permission-content">
+    <h1 class="title">{{ 'permission.motion.title' | translate }}</h1>
+    <p class="text">
+      {{ 'permission.motion.message' | translate }}
+    </p>
+    <br>
+    <p class="text" [innerHTML]="motionInstructions"></p>
+    <div class="update-container">
+      <button (click)="goToMotionSettings()" class="btn primary">{{ 'permission.motion.confirm_label' | translate }}</button>
+    </div>
+  </div>
+</ion-content>

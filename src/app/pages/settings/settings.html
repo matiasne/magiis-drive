@@ -1,0 +1,57 @@
+<ion-content>
+  <div class="header-menu">
+    <ion-icon name="arrow-back-outline" (click)="goBack()"></ion-icon>
+    <span class="header-title">{{ 'settings.label_settings' | translate }}</span>
+  </div>
+
+  <div class="wrapper">
+    <ion-list>
+      <!-- <ion-item >
+        <ion-label>{{ 'settings.label_out_of_service' | translate }}</ion-label>
+        <ion-toggle slot="end" (ionChange)="toggleOutOfService()" [(ngModel)]="outOfService" ></ion-toggle>
+      </ion-item> -->
+      <ion-item >
+        <ion-label>{{ 'settings.label_show_carrier_circle' | translate }}</ion-label>
+        <ion-toggle slot="end" (ionChange)="toggleShowCarrierCircle()"  [(ngModel)]="showCarrierCircle"></ion-toggle>
+      </ion-item>
+      <ion-item >
+        <ion-label>{{ 'settings.label_open_map' | translate }}</ion-label>
+        <ion-toggle slot="end" (ionChange)="toggleAutoShowMapOnTravel()" [(ngModel)]="autoShowMapOnTravel"></ion-toggle>
+      </ion-item>
+      <ion-item >
+        <ion-label>{{ 'settings.label_highlight_addresses' | translate }}</ion-label>
+        <div class="ion-no-padding" >
+          <ion-toggle (ionChange)="toggleHighlightAddresses()" slot="end"  [(ngModel)]="highlightAddresses" ></ion-toggle>
+        </div>
+      </ion-item>
+    </ion-list>
+
+      <div class="preference-field">
+        <span class="field-label">{{ 'settings.label_language' | translate }}</span>
+        <div class="lang-container">
+          <img [src]="flagURL" alt="">
+          <ion-select #langSelect value="es" (ionChange)="onLanguageChanged(langSelect.value)" name="input-lang" (ionChange)="setFlag(langSelect.value)" [(ngModel)]="currentLanguage" [ngModelOptions]="{standalone: true}" interface="popover">
+            <!-- <ion-select-option *ngFor="let lang of languagesCollection" [value]="lang">
+              {{ lang }}
+            </ion-select-option> -->
+            <ion-select-option value="es">Es</ion-select-option>
+            <ion-select-option value ="en">En</ion-select-option>
+            
+          </ion-select>
+        </div>
+      </div>
+
+      <div class="preference-field">
+        <span class="field-label">{{ 'settings.label_default_map' | translate }}</span>
+        <ion-select (ionChange)="onPreferredMapServiceChanged(mapServiceSelect.value)" #mapServiceSelect value="standard" multiple="false" interface="popover"  name="input-type" [ngModelOptions]="{standalone: true}" [(ngModel)]="preferredMapService">
+          <ion-select-option *ngFor="let service of mapServicesCollection" [value]="service.value">
+            {{ service.name }}
+          </ion-select-option>
+        </ion-select>
+      </div>
+  </div>
+</ion-content>
+
+<div class="btn-container">
+  <button class="btn primary" (click)="submit()">{{ 'settings.label_button_submit' | translate }}</button>
+</div>

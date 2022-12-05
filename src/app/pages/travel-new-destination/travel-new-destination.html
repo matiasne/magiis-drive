@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="container-destinations">
+    <h2 class="title-modal">
+      {{ 'travel_in_progress.next_destination_modal.title' | translate }}:
+    </h2>
+
+    <ion-row *ngFor="let destination of destinations; let i = index" class="destination-row">
+      <button ion-button class="btn-action next-destination" (click)="selectDestination(i)">
+        <ion-row class="btn-container">
+          <ion-col class="btn-wrapper">
+            <p class="btn-text">
+              <span class="text-bold"> {{ destination.line_one }} </span>
+              <span class="text-regular"> {{ destination.line_two }} </span>
+            </p>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-row>
+  </div>
+</ion-content>

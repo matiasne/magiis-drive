@@ -1,0 +1,118 @@
+travel-next-destination {
+  .title-modal {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+  .btn-action {
+    min-height: 60px;
+    height: unset !important; // FIX: height .button-md.
+    padding: 16px 12px;
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 3px;
+    text-transform: unset !important; // FIX: text-transform .button-md.
+
+    .btn-container {
+      width: 100%;
+
+      .btn-wrapper {
+        padding: 0;
+        display: flex;
+        align-items: start;
+        width: 100%;
+      }
+      .btn-text {
+        margin: 0;
+        width: calc(100% - 40px); // -[.btn-icon]
+        text-align: left;
+        line-height: 1.2;
+        span { white-space: normal; }
+      }
+      .btn-icon {
+        margin-right: 10px;
+        height: 30px;
+        width: 30px;
+      }
+      .text-bold {
+        font-weight: 600;
+      }
+      .text-regular {
+        font-weight: 400;
+      }
+    }
+  }
+  .container-divider {
+    height: 50px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .divisor {
+      position: relative;
+      text-align: center;
+      width: 100%;
+
+      p {
+        color: #999;
+        display: inline-block;
+        padding: 0 10px;
+        background: white;
+        margin: 0 auto;
+        position: relative;
+        font-size: 14px;
+      }
+      &:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #eeeeee;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: -1;
+      }
+    }
+  }
+  .next-destination {
+    background: #F8DEF0;
+    box-shadow: rgba(0, 0, 0, 0.16);
+    width: 100%;
+  }
+  .next-destination.button-md.activated{
+    background: rgb(214, 161, 198)!important;
+  }
+  .continue-destination{
+    // background-color: color($colors, light);
+    border: #97D1C8 1px solid;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .continue-destination.button-md.activated{
+    background: #d9fbf6!important;
+  }
+  .btn-subtitle {
+    color: #666666;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .nex-destination-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 16px;
+    // background: color($colors, light);
+    border-top: solid 1px #eee;
+    button {
+      // background-color: color($colors, secondary);
+      // color: color($colors, light);
+      margin: 0;
+    }
+    &::before { content: none; }
+  }
+}

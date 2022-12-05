@@ -1,0 +1,29 @@
+qr-payment-modal {
+  .container {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 1em;
+    }
+    .qr-code img {
+      width: 100%;
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 16px;
+      width: calc(100% - 32px);
+
+      .button-negative {
+        float: left;
+        width: calc(50% - 0.5em);
+        margin-left: 0 !important;
+      }
+      .button-positive {
+        float: right;
+        width: calc(50% - 0.5em);
+        margin-right: 0 !important;
+      }
+    }
+  }
+}

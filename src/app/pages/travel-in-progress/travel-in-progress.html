@@ -1,0 +1,165 @@
+<ion-header>
+  <ion-navbar transparent hideBackButton>
+    <span class="title">{{'travel_in_progress.label_in_travel' | translate}}</span>
+    <fab-overlay></fab-overlay>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce scrollY="false">
+  <ion-row *ngIf="travel?.affiliateData" class="affiliate-wrapper">
+    <img src="assets/images/handshake-solid.svg">
+    <span>{{ 'affiliate' | translate }} {{ travel?.affiliateData?.carrierName }}</span>
+  </ion-row>
+  <!-- PAGE HEADER -->
+  <ion-row class="container-top">
+    <ion-row class="passenger-wrapper">
+      <div>
+        <img [src]="passengerImage ? passengerImage : 'assets/images/passenger_avatar_default.png'"
+             class="passenger-avatar">
+      </div>
+      <ion-col class="passenger-wrapper-text">
+        <ion-row ion-text color="dark" class="passenger-label">
+          {{'travel_confirm.label_passenger' | translate}}
+        </ion-row>
+        <ion-row class="passenger-name">
+          {{travel.passengerName}}
+        </ion-row>
+        <ion-row class="travel-number">
+          {{travel.travelIdForCarrier}}
+        </ion-row>
+      </ion-col>
+      <ion-col class="passenger-wrapper-text travel-cost">
+        <!-- Costo estimado -->
+        <p ion-text color="dark" class="passenger-label" no-margin>
+          {{ 'travel_confirm.label_estimated_cost' | translate }}
+        </p>
+        <p *ngIf="travel.paymentMethod === 'CHECKING_ACCOUNT' && travel.hideAmountsDriver" ion-text class="passenger-label amount" no-margin>
+          {{ 'price_agreed' | translate }}
+        </p>
+        <p *ngIf="!(travel.paymentMethod === 'CHECKING_ACCOUNT' && travel.hideAmountsDriver)" ion-text class="passenger-label amount" no-margin>
+         <span class="currency">{{ getCurrencySymbol() }} </span> {{ travel.cost }}
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <button class="ripple btn-stop" (click)="toggleTimer()" [class.on-wait]="timerOn">
+      <div class="btn-stop-container stop-off" *ngIf="!timerOn">
+        <span> {{ 'travel_in_progress.label_stop' | translate }} </span>
+        <span class="label-wait"> {{ 'travel_in_progress.label_wait' | translate }} </span>
+      </div>
+      <div class="btn-stop-container stop-on" *ngIf="timerOn">
+        <span class="timerTitle"> {{ 'travel_in_progress.label_continue' | translate }} </span>
+        <span class="time">
+          {{timerMinutes < 10 ? '0'+timerMinutes : timerMinutes}}:{{timerSeconds < 10 ? '0'+timerSeconds : timerSeconds}} min
+        </span>
+      </div>
+    </button>
+
+  </ion-row>
+
+  <!-- EDIT TRAVEL -->
+  <ion-row class="container-header-trip">
+    <ion-col col-9>
+      <span class="container-title-trip">{{ 'travel_in_progress.label_route' | translate }} ({{ travel.fastestRoute ? ('FASTEST_ROUTE' | translate).toLowerCase() : ('SHORTEST_ROUTE' | translate).toLowerCase() }})</span>
+    </ion-col>
+    <ion-col col-3 class="edit-travel">
+      <ng-container *ngIf="!travel.rental && !travel.affiliateSettings">
+        <button ion-button class="edit-travel-icon" (click)="editTravel()">
+          <ion-icon ios="md-create" md="md-create"></ion-icon>
+        </button>
+      </ng-container>
+    </ion-col>
+  </ion-row>
+
+  <!-- TRAVEL -->
+  <div class="overflow-row">
+    <ion-row class="container-trip">
+      <!-- ORIGIN -->
+      <ion-col no-padding class="trip-col travel-origin">
+        <ion-label class="travel-label travel-origin-label">
+          <ion-icon ios="ios-radio-button-on" md="md-radio-button-on" color="primary" class="icon-trip icon-origin"></ion-icon>
+          <p class="trip-detail">
+            <span [ngClass]="{'text-strong': highlightAddresses}" (click)="viewAddress(travel.fromName)">{{ travel.fromName }}</span>
+          </p>
+        </ion-label>
+      </ion-col>
+
+      <!-- MULTIDESTINO VISITED -->
+      <ion-col no-padding class="trip-col travel-waypoint" *ngFor="let waypoint of travel.visitedWaypoints">
+        <ion-label class="travel-label travel-waypoint-label">
+          <ion-icon ios="md-checkmark-circle" md="md-checkmark-circle" color="primary" class="icon-trip icon-visited"></ion-icon>
+          <p class="trip-detail">
+            <span [ngClass]="{'text-strong': highlightAddresses}" (click)="viewAddress(waypoint.shortName)">{{ waypoint.shortName }}</span>
+          </p>
+        </ion-label>
+      </ion-col>
+
+      <!-- MULTIDESTINO PENDINGS -->
+      <ion-col no-padding class="trip-col travel-waypoint" *ngFor="let waypoint of travel.pendingWaypoints; first as isFirst">
+        <!-- CURRENT DESTINATION -->
+        <ng-container *ngIf="isFirst">
+          <ion-label class="travel-label travel-waypoint-label">
+            <img src="assets/svg/icon_siguiente_destino.svg" class="icon-trip icon-current">
+            <p class="trip-detail current-destination">
+              <span [ngClass]="{'text-strong': highlightAddresses}" (click)="viewAddress(waypoint.shortName)">{{ waypoint.shortName }}</span>
+            </p>
+          </ion-label>
+        </ng-container>
+        <ng-container *ngIf="!isFirst">
+          <ion-label class="travel-label travel-waypoint-label">
+            <ion-icon ios="md-radio-button-off" md="md-radio-button-off" color="primary" class="icon-trip icon-origin"></ion-icon>
+            <p class="trip-detail">
+              <span [ngClass]="{'text-strong': highlightAddresses}" (click)="viewAddress(waypoint.shortName)">{{ waypoint.shortName }}</span>
+            </p>
+          </ion-label>
+        </ng-container>
+      </ion-col>
+
+      <!-- DESTINATION -->
+      <ion-col no-padding class="trip-col travel-destination">
+        <ion-label class="travel-label travel-destination-label">
+          <ion-icon ios="ios-pin" md="md-pin" color="secondary" class="icon-trip icon-destination"></ion-icon>
+          <p class="trip-detail">
+            <span *ngIf="!travelWithOpenDestination && !travel.roundTrip" [ngClass]="{'text-strong': highlightAddresses}" (click)="viewAddress(travel.toName)">{{ travel.toName }}</span>
+            <!-- If roundTrip => destination == origin. Only for UI. -->
+            <span *ngIf="!travelWithOpenDestination && travel.roundTrip" [ngClass]="{'text-strong': highlightAddresses}" (click)="viewAddress(travel.fromName)">{{ travel.fromName }}</span>
+            <span *ngIf="travelWithOpenDestination">{{ 'travel_in_progress.label_open_destination' | translate }}</span>
+          </p>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <!-- ROUND TRIP LABEL & BUTTON MAP -->
+  <ion-row class="footer-main-container">
+    <ion-col>
+      <ng-container *ngIf="travel.roundTrip">
+        <ion-badge class="roundTrip-label" mode="ios">
+          <ion-icon ios="md-git-compare" md="md-git-compare"></ion-icon>
+          {{ 'ROUND_TRIP' | translate }}
+        </ion-badge>
+      </ng-container>
+    </ion-col>
+    <ion-col class="col-map">
+      <!-- MAPA -->
+      <ion-fab class="fab-btn" bottom right edge>
+        <button ion-fab class="fab-map" (click)="showMap()">
+          <img src="assets/svg/md-map.svg">
+          <span class="fab-map-text"> {{ 'travel_in_progress.label_go_to_map' | translate }} </span>
+        </button>
+      </ion-fab>
+    </ion-col>
+  </ion-row>
+
+  <!-- FINALIZE TRAVEL -->
+  <ion-row class="buttons-wrapper">
+
+    <!-- BOTON FINALIZAR -->
+    <ion-col class="col-finish">
+      <button ion-button (click)="finishTravelDialog()" class="button-positive">
+        {{ 'buttons.finalize' | translate }}
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

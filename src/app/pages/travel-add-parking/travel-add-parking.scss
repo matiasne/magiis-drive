@@ -1,0 +1,27 @@
+travel-add-parking {
+  .container.grid {
+    h2 {
+      min-height: 30px;
+    }
+  }
+
+  .form-container {
+    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+  }
+
+  .buttons {
+    background: white;
+    z-index: 9999;
+  }
+
+  .platform-android & {
+    .scroll-content {
+      padding-bottom: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="input-location-search">
+    <button ion-button (click)="onCancel()" clear>
+      <ion-icon ios="ios-close" md="md-close"></ion-icon>
+    </button>
+    <ion-item no-lines class="trailing-icon">
+      <ion-input #input name="input-from" [(ngModel)]="locationText" (ngModelChange)="onLocationTextChange()" placeholder="Dirección"></ion-input>
+    </ion-item>
+  </div>
+  <ion-list class="prediction-list" *ngIf="item.predictions.length > 0 && !loading">
+    <ion-item *ngFor="let place of item.predictions" class="prediction-item" (click)="onSelectPlace(place)">
+      <ion-icon ios="ios-pin" md="md-pin" item-start></ion-icon>
+      {{ place.mainText }}
+      <p> {{ place.secondaryText }} </p>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="loading" class="loading-container">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+</ion-content>

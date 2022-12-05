@@ -1,0 +1,17 @@
+<ion-content class="no-scroll">
+  <ion-grid class="container">
+    <h2>{{ 'QR_CODE' | translate }}</h2>
+    <!--qrcode
+      [qrdata]="url"
+      [size]="256"
+    ></qrcode-->
+    <ion-row class="buttons">
+      <button ion-button class="button-negative" (click)="dismiss(false)">
+        {{ 'travel_resume.dialogs.cancel' | translate }}
+      </button>
+      <button ion-button class="button-positive" (click)="dismiss(true)">
+        {{ 'travel_resume.dialogs.confirm' | translate }}
+      </button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

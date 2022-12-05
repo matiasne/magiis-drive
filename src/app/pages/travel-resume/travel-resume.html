@@ -1,0 +1,238 @@
+<ion-header>
+  <ion-navbar transparent hideBackButton>
+    <ion-icon *ngIf="canGoBack" class="profile-back" name="arrow-back" (click)="goBack()"></ion-icon>
+    <span class="title">{{'travel_resume.label_travel_resume' | translate}}</span>
+    <fab-overlay></fab-overlay>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce has-bouncing="false" forceOverscroll="false">
+  <ion-row *ngIf="travel?.affiliateData" class="affiliate-wrapper">
+    <img src="assets/images/handshake-solid.svg">
+    <span>{{ 'affiliate' | translate }} {{ travel?.affiliateData?.carrierName }}</span>
+  </ion-row>
+  <travel-item-distance-duration
+    *ngIf="travel"
+    [passenger]="travel?.passengerName"
+    (travel)="travel.travelIdForCarrier"
+    [distance]="travel?.travelLength"
+    [duration]="travel?.travelDuration"
+    [originPlace]="travel?.fromName"
+    [destinationPlace]="travel?.finalDestination.shortName"
+    [waypoints]="travel?.visitedWaypoints"
+    [highlightAddresses]="highlightAddresses"
+  >
+  </travel-item-distance-duration>
+  <ion-grid class="view-container">
+    <!-- Buttons toll and parking-->
+    <ion-row *ngIf="!travel?.affiliateSettings" class="parking-toll-container">
+      <ion-col col-4 no-padding class="add-toll">
+        <button ion-item detail-none class="btn-toll" (click)="addNewToll()">
+          <img src="assets/svg/toll-road.svg">
+          <p><strong>+</strong> {{ 'travel_resume.label_tolls' | translate }}</p>
+        </button>
+      </ion-col>
+      <ion-col col-4 no-padding class="add-parking">
+        <button ion-item detail-none class="btn-parking" (click)="addNewParking()">
+          <img src="assets/svg/parking-sign.svg">
+          <p><strong>+</strong> {{ 'travel_resume.label_parking' | translate }}</p>
+        </button>
+      </ion-col>
+      <ion-col col-4 no-padding class="add-other">
+        <button ion-item detail-none class="btn-other" (click)="addOtherCost()">
+          <img src="assets/svg/other.svg">
+          <p><strong>+</strong> {{ 'travel_resume.label_other_cost' | translate }}</p>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Travel detail list -->
+    <ion-row class="travel-details-container">
+      <ion-list>
+        <ion-item no-lines>
+          <ion-label>
+            <ion-row>
+              <ion-col col-7>
+                <ion-label *ngIf="travel?.roundTrip" class="amount_description">
+                  {{ 'travel_resume.label_round_trip' | translate }}
+                </ion-label>
+                <ion-label *ngIf="!travel?.roundTrip" class="amount_description">
+                  {{ 'travel_resume.label_one_way_trip' | translate }}
+                </ion-label>
+              </ion-col>
+              <ion-col col-4 text-right>
+                <ion-label *ngIf="selectedPaymentMethodShow.value === 'CHECKING_ACCOUNT' && travel?.hideAmountsDriver" class="amount">
+                  {{ 'price_agreed' | translate }}
+                </ion-label>
+                <ion-label *ngIf="!(selectedPaymentMethodShow.value === 'CHECKING_ACCOUNT' && travel?.hideAmountsDriver)" class="amount">
+                  {{ getCurrencySymbol() }} {{ travel?.totalCostPartial }}
+                </ion-label>
+              </ion-col>
+              <ion-col col-1></ion-col>
+            </ion-row>
+          </ion-label>
+        </ion-item>
+        <travel-item-details [label]="'travel_resume.label_wait'"
+          amount="{{
+            selectedPaymentMethodShow.value === 'CHECKING_ACCOUNT' && travel?.hideAmountsDriver ?
+              ((travel?.waitMinutes ? travel?.waitMinutes : '0') + 'm') :
+              (getCurrencySymbol() + ' ' + travel?.priceWaitTime)
+          }}"
+          [expandable]="travel?.waitDetailList?.length > 0"
+          [visible]="travel?.waitDetailList?.length > 0"
+          class="amount"
+        >
+          <ng-container *ngFor="let waitItem of travel?.waitDetailList; let index = index" @fadeIn>
+            <ion-item class="travel-detail-item" no-lines>
+              <ion-label>
+                <ion-row>
+                  <ion-col col-7 class="item-name-col">
+                    <ion-label>
+                      {{ 'travel_resume.label_wait_stops' | translate }} {{ index + 1 }}
+                    </ion-label>
+                  </ion-col>
+                  <ion-col col-4 text-right>
+                    <ion-label>
+                      {{ waitItem?.minutes }}:{{ waitItem?.seconds }}m
+                    </ion-label>
+                  </ion-col>
+                  <ion-col col-1 text-right>
+                  </ion-col>
+                </ion-row>
+              </ion-label>
+            </ion-item>
+          </ng-container>
+        </travel-item-details>
+        <travel-item-details [label]="'travel_resume.label_other_cost'"
+                             amount="{{ getCurrencySymbol() }} {{ otherCostExpense }}"
+                             [expandable]="otherCostList?.length > 0"
+                             [visible]="otherCostList?.length > 0"
+                             class="amount">
+          <ng-container *ngFor="let otherCost of otherCostList; let index = index" @fadeIn>
+            <ion-item class="travel-detail-item" no-lines>
+              <ion-label>
+                <ion-row>
+                  <ion-col col-7 class="item-name-col">
+                    <ion-label>
+                      {{ otherCost?.name }}
+                    </ion-label>
+                  </ion-col>
+                  <ion-col col-4 text-right>
+                    <ion-label>
+                      {{ getCurrencySymbol() }} {{ otherCost?.price }}
+                    </ion-label>
+                  </ion-col>
+                  <ion-col col-1 text-right>
+                    <ion-icon name="trash" color="danger" (click)="removeOtherCostItem(otherCost, index)"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-label>
+            </ion-item>
+          </ng-container>
+        </travel-item-details>
+        <travel-item-details [label]="'travel_resume.label_tolls'"
+                              amount="{{ getCurrencySymbol() }} {{ tollExpense }}"
+                              [expandable]="tollList?.length > 0"
+                              [visible]="tollList?.length > 0"
+                              class="amount">
+          <ng-container *ngFor="let toll of tollList; let index = index" @fadeIn>
+            <ion-item class="travel-detail-item" no-lines>
+              <ion-label>
+                <ion-row>
+                  <ion-col col-7 class="item-name-col" (click)="toll.image ? showTicket(toll) : null">
+                    <ion-icon class="icon-image-file" name="custom-image-file" *ngIf="toll.image"></ion-icon>
+                    <ion-label>
+                      {{ toll?.name }}
+                    </ion-label>
+                  </ion-col>
+                  <ion-col col-4 text-right>
+                    <ion-label>
+                      {{ getCurrencySymbol() }} {{ toll?.price }}
+                    </ion-label>
+                  </ion-col>
+                  <ion-col col-1 text-right>
+                    <ion-icon name="trash" color="danger" (click)="removeTollItem(toll, index)"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-label>
+            </ion-item>
+          </ng-container>
+        </travel-item-details>
+        <travel-item-details [label]="'travel_resume.label_parking'"
+                              amount="{{ getCurrencySymbol() }} {{ parkingExpense }}"
+                              [expandable]="parkingList?.length > 0"
+                              [visible]="parkingList?.length > 0"
+                              class="amount">
+          <ng-container *ngFor="let parking of parkingList; let index = index" @fadeIn>
+            <ion-item class="travel-detail-item" no-lines>
+              <ion-label>
+                <ion-row>
+                  <ion-col col-7 class="item-name-col" (click)="parking.image ? showTicket(parking) : null">
+                    <ion-icon class="icon-image-file" name="custom-image-file" *ngIf="parking.image"></ion-icon>
+                    <ion-label>
+                      {{ parking?.name }}
+                    </ion-label>
+                  </ion-col>
+                  <ion-col col-4 text-right>
+                    <ion-label>
+                      {{ getCurrencySymbol() }} {{ parking?.price }}
+                    </ion-label>
+                  </ion-col>
+                  <ion-col col-1 text-right>
+                    <ion-icon name="trash" color="danger" (click)="removeParkingItem(parking, index)"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-label>
+            </ion-item>
+          </ng-container>
+        </travel-item-details>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<div class="footer">
+  <ion-grid padding>
+    <ion-row>
+      <ion-card class="travel-cost-card">
+        <ion-card-content>
+          <ion-row>
+            <ion-label text-center class="travel-cost-text" *ngIf="!isFrequentDestination()">{{ 'travel_resume.label_total_ammount' | translate }}</ion-label>
+            <ion-label text-center class="travel-cost-text" *ngIf="isFrequentDestination()">{{ 'travel_resume.label_total_ammount_frecuent' | translate }}</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-label *ngIf="selectedPaymentMethodShow.value === 'CHECKING_ACCOUNT' && travel?.hideAmountsDriver" text-center class="travel-cost-amount">{{ 'price_agreed' | translate }}</ion-label>
+            <ion-label *ngIf="!(selectedPaymentMethodShow.value === 'CHECKING_ACCOUNT' && travel?.hideAmountsDriver)" text-center class="travel-cost-amount">{{ getCurrencySymbol() }} {{travel?.totalCostFinal}}</ion-label>
+          </ion-row>
+          <ion-row class="payment-method">
+            <ion-select
+              #paymentMethodSelect
+              [ngModel]="selectedPaymentMethodShow.value"
+              (ionChange)="changePaymentMethod($event, paymentMethodSelect)"
+              interface="action-sheet"
+              okText="{{ 'travel_resume.dialogs.accept' | translate }}"
+              cancelText="{{ 'travel_resume.dialogs.cancel' | translate }}"
+              [selectOptions]="{
+                title: 'travel_resume.dialogs.select_payment_method' | translate,
+                cssClass: 'select-payment-method'
+              }"
+            >
+              <ion-option *ngFor="let paymentMethodShow of paymentMethodShowList" [value]="paymentMethodShow.value">
+                {{paymentMethodShow.label | translate}} <ion-icon name="arrow-dropdown"></ion-icon>
+              </ion-option>
+            </ion-select>
+
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <ion-row>
+      <button ion-button [disabled]="travel?.totalCostFinal !== 0 && !travel?.totalCostFinal"
+        (click)="closeTravel()" class="button-positive close-travel-btn"
+        > {{ labelButtonClose }}
+      </button>
+    </ion-row>
+  </ion-grid>
+</div>
+<pop-picture></pop-picture>

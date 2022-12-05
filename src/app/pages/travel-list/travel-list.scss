@@ -1,0 +1,208 @@
+@import '../../../theme/variables.scss';
+
+ion-content {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --background: #f9f7f8;
+}
+
+ion-col {
+  padding: 0;
+}
+
+.header-menu {
+  background-color: $bgLight;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  color: $black;
+
+  .header-title {
+    font-size: $font20;
+    font-weight: $bold;
+    color: $black;
+    margin-left: 8px;
+  }
+}
+
+ion-list {
+  background-color: transparent;
+  padding: 0 16px;
+}
+
+.travel-card {
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: $light;
+  margin: 16px auto;
+  border: solid 1px $dark-softer;
+
+  .date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    span {
+      color: $black;
+      font-size: $font16;
+    }
+
+    .time {
+      color: $secondary;
+    }
+  }
+
+  .distance {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      &:last-child {
+        text-align: right;
+      }
+    }
+
+    span {
+      display: block;
+      font-size: $font16;
+      font-weight: $bold;
+    }
+  }
+
+  .location {
+    padding: 4px 0;
+    position: relative;
+
+    .dash-line {
+      position: absolute;
+      top: 25%;
+      left: 9px;
+      border-left: dotted 2px #7a7a7a;
+      height: 50%;
+    }
+
+    ion-icon {
+      color: $secondary;
+      margin-right: 8px;
+      width: 20px;
+      min-width: 20px;
+      background-color: $light;
+    }
+
+    .destination {
+      ion-icon {
+        color: $danger-red;
+      }
+    }
+
+    .origin, .destination {
+      margin: 8px 0;
+    }
+  }
+
+  .score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+
+    .stars {
+      margin-right: 4px;
+      font-size: $font20;
+      color: $secondary;
+    }
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      color: $black;
+      font-size: $font16;
+    }
+
+    .ammount {
+      color: $black;
+      font-size: $font20;
+      font-weight: $bold;
+    }
+  }
+}
+
+#map {
+  background-color: $bgLight;
+  height: 240px;
+}
+
+
+.travel-segment {
+  max-width: 240px;
+  padding: 0 16px;
+  background-color: $bgLight;
+
+
+  ion-col {
+    padding: 0;
+  }
+
+  ion-segment {
+    background-color: transparent;
+
+    ion-segment-button {
+      font-size: $font14;
+      font-weight: $bold;
+      padding: 6px;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  ion-segment-button::part(indicator-background) {
+    background: $black;
+  }
+
+  /* Material Design styles */
+  ion-segment-button.md::part(native) {
+    color: $black;
+  }
+
+  .segment-button-checked.md::part(native) {
+    color: $black;
+  }
+
+  /* iOS styles */
+  ion-segment-button.ios::part(native) {
+    color: $black;
+  }
+
+  .segment-button-checked.ios::part(native) {
+    color: $light;
+  }
+
+  ion-segment-button.ios::part(indicator-background) {
+    border-radius: 999px;
+  }
+}
+
+ion-list {
+  background-color: transparent;
+
+  ion-item {
+    --background: transparent;
+    background-color: transparent;
+    --border-width: 0;
+    --border-style: none;
+    --padding-start: 0;
+    border-top: solid 1px $dark-softer;
+    border-bottom: solid 1px $dark-softer;
+    margin: 12px 0;
+  }
+}

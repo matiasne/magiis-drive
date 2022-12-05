@@ -1,0 +1,30 @@
+{
+  "currency": {
+    "name": "Dollar",
+    "name_plural": "Dollars",
+    "symbol": "U$D",
+    "key": "USD",
+    "decimalPlaces": 2
+  },
+  "culture": "en",
+  "locale": "en-US",
+  "dateFormat": "MM/dd/yyyy",
+  "measureUnits": "IMPERIAL",
+  "taxLanguage": {
+    "taxCodes": [
+      {
+        "value": "USA-C1",
+        "label": "Cat 1"
+      },
+      {
+        "value": "USA-C2",
+        "label": "Cat 2"
+      },
+      {
+        "value": "USA-C2",
+        "label": "Cat 3"
+      }
+    ],
+    "specific_tax_lang_key_EXAMPLE": "Specific language key example for taxary language"
+  }
+}

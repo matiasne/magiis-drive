@@ -1,0 +1,124 @@
+travel-item-distance-duration {
+
+  .accordion-header {
+    background-color: #DBEFEC;
+    height: 55px;
+    padding: 0;
+
+    /* INITIAL ICON ANIMATION */
+    .arrow-icon {
+      transition: all .25s ease-in;
+      transform: rotate(0);
+    }
+    .item-inner {
+      border: 0 !important;
+      padding: 0 !important;
+    }
+    .label, .label-md {
+      margin: 0;
+    }
+
+    .header-container {
+      display: block;
+      align-items: center;
+      padding: 10px 32px 10px 16px;
+      position: relative;
+
+      .arrow-icon{
+        position: absolute;
+        top: 50%;
+        margin-top: -9px;
+        right: 16px;
+      }
+    }
+
+    .travel-passenger, .travel-number, .travel-distance, .travel-duration {
+      font-size: 12px;
+      color: #888888;
+      justify-content: center;
+      align-items: center;
+      display: inline-block;
+    }
+    .travel-passenger {
+      border-right: 1px solid #54B3A5;
+      padding-right: 10px;
+      margin-right: 10px
+    }
+    .travel-distance {
+      border-right: 1px solid #54B3A5;
+      padding-right: 10px;
+      margin-right: 10px
+    }
+
+    .distance-img, .duration-img {
+      height: 14px;
+      width: 14px;
+      margin: 0 5px 0 0;
+      display: inline-block;
+      -webkit-filter: saturate(2);
+      filter: saturate(2);
+      vertical-align: top;
+    }
+  }
+
+  /* FINAL ICON ANIMATION */
+  .active .arrow-icon {
+    transform: rotate(180deg);
+  }
+  /* EXPANDABLE CONTENT SECTION */
+  .accordion-content {
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .accordion-content {
+    background-color: #E9F5F3;
+
+    .row{
+      display: block;
+    }
+
+    .trip-col{
+      position: relative;
+      flex-wrap: nowrap;
+    }
+    .travel-label{
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      position: relative;
+    }
+    .travel-origin-label,
+    .travel-waypoint-label{
+      padding: 0 0 17px 0;
+    }
+    .travel-origin-label:after,
+    .travel-waypoint-label:after{
+      content: '';
+      width: 1px;
+      height: 15px;
+      position: absolute;
+      bottom: 1px;
+      left: 6px;
+      border-left: dotted 4px #aaa;
+    }
+
+    .icon-trip{
+      font-size: 14px;
+      font-weight: 700;
+      width: 16px;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      margin: -2px 0 0;
+    }
+
+    .travel-destination-label{
+      .icon-trip{
+        font-size: 16px;
+      }
+    }
+
+
+  }
+}

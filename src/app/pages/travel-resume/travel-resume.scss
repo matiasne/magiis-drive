@@ -1,0 +1,266 @@
+travel-resume {
+  /* VARS */
+  // background: color($colors, light) !important;
+  // background-color: color($colors, light) !important;
+
+  /* NAVBAR (Title & Icon 911) */
+  .header .toolbar-background {
+    // background: color($colors, primary) !important;
+  }
+
+  .profile-back {
+    font-size: 2em;
+    margin-left: 12px;
+    color: #fff;
+    line-height: 24px;
+    vertical-align: middle;
+  }
+  .title {
+    // color: color($colors, light);
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    text-align: left;
+    padding: 0 55px 0 16px;
+    vertical-align: middle;
+  }
+
+  /* VIEW CONTENT */
+  $height-footer-section: 230px;
+
+  .scroll-content { margin-bottom: $height-footer-section; }
+  .view-container {
+    padding: 10px 16px 10px 16px;
+
+    .add-toll { padding-right: 8px; }
+    .add-parking {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    .add-other { padding-left: 8px; }
+  }
+  .affiliate-wrapper {
+    padding: 5px 16px;
+    background: #DBEFEC;
+    // color: color($colors, primary);
+    padding-bottom: 0;
+
+    img {
+      height: 20px;
+    }
+    span {
+      margin-left: 0.5em;
+      font-weight: bold;
+      line-height: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  /* PARKING, TOLL AND OTHER COST BUTTONS */
+  .parking-toll-container { padding-bottom: 16px; }
+  .btn-toll, .btn-parking, .btn-other {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    color: #666;
+    background-color: #F6F6F6;
+
+    .item-inner {
+      padding: 0 !important;
+    }
+    .label {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+    p {
+      margin-top: 7px;
+      margin-bottom: 9px;
+    }
+    img {
+      margin-top: 9px;
+      height: 30px;
+    }
+  }
+
+  .btn-disabled {
+    background-color: #cecece;
+  }
+
+  /* TRAVEL DETAILS CONTAINER */
+  .travel-details-container {
+    border-top: 2px solid #EEEEEE;
+    padding-top: 10px;
+    color: #666666;
+
+    .list {
+      margin: 0;
+      width: 100%;
+
+      .col {
+        padding: 0;
+      }
+      .item {
+        padding: 0;
+        min-height: 30px;
+      }
+      .label {
+        margin: 0;
+        font-size: 14px;
+        display: inline;
+        background: white;
+        padding: 0 2px 0;
+        font-weight: bold;
+      }
+
+      .travel-detail-item {
+        font-size: 13px;
+        color: #888888;
+        .item-name-col {
+          padding-left: 10px;
+
+          .icon-image-file {
+            margin-bottom: -3px;
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+
+    .item-inner{
+      position: relative;
+      padding-right: 0!important;
+    }
+    .item-inner:before{
+      content:'';
+      display: block;
+      width: 77%;
+      height: 100%;
+      border-bottom: dotted 2px #DDDDDD;
+      position: absolute;
+      bottom: 10px;
+      left: 34px;
+    }
+  }
+
+  /* BOTTOM SECTION */
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: $height-footer-section;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16);
+    z-index: 999;
+    background: white;
+
+    .grid {
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    /* TRAVEL COST CARD */
+    .travel-cost-card {
+      // background: color($colors, primary);
+      margin:0;
+      font-size: 1.4rem;
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: none;
+
+      .card-content {
+        line-height: 1 !important;
+        padding: 8px;
+      }
+      .travel-cost-text {
+        // color: color($colors, light);
+        font-size: 1.4rem;
+        margin: 8px 0 4px;
+        font-weight: 400;
+      }
+      .travel-cost-amount {
+        font-weight: bold;
+        // color: color($colors, light);
+        font-size: 32px;
+        margin: 0;
+      }
+      .payment-method {
+        justify-content: center;
+
+        .select {
+          position:relative;
+          max-width: none;
+          // color: color($colors, light);
+          padding: 8px 0;
+          font-weight: 500;
+          font-size: 16px;
+          /* Arrow icon */
+          .select-icon-inner {
+            // color: color($colors, light);
+          }
+        }
+      }
+    }
+
+    .select-md .select-icon{
+      width: 15px!important;
+    }
+
+    /* SIGNATURE BUTTON & CLOSE TRAVEL BUTTON*/
+    .signature-btn, .close-travel-btn {
+      width: 100%;
+      padding: 30px;
+      font-size: 2.2rem;
+      height: 82px !important;
+    }
+  }
+
+  @media (max-width: 387px) {
+    .btn-toll, .btn-parking, .btn-other {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+
+}
+
+.select-payment-method {
+  .action-sheet-title {
+    padding: 24px;
+    // background: color($colors, primary);
+    border-bottom: solid 1px;
+    color: white;
+    font-weight: bold;
+  }
+  .action-sheet-group:first-child{
+    padding: 0 !important;
+  }
+}
+
+.modalOther .modal-wrapper {
+  height: 320px;
+}
+
+.amount {
+  font-size: large !important;
+  font-weight: bold;
+  color: #7c7c7c;
+}
+.amount_description{
+  font-size: large;
+}
+.othercostError{
+  color: rgba(255, 56, 56, 0.925);
+  font-size: 0.85rem;
+}

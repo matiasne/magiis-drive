@@ -1,0 +1,119 @@
+travel-edit-search {
+  .input-location-search {
+    position: relative;
+    width: 100%;
+    padding: 0.5em;
+    height: 70px;
+
+    button {
+      margin: 0px;
+      float: left;
+      width: 40px;
+      font-size: 20px;
+      padding: 0px;
+      color: #7c7c7c;
+      height: 56px !important;
+      background: #EDEDED;
+      border: 1px solid #dadada;
+    }
+
+    .input {
+      font-weight: bold;
+
+      .text-input-clear-icon {
+        color: #999999 !important;
+        top: -9px;
+      }
+    }
+
+    .item {
+      padding: 0;
+      height: 56px;
+      width: calc(100% - 45px);
+      background: #EDEDED;
+      border: 1px solid #dadada;
+      border-radius: 4px;
+      float: right;
+
+      .text-input {
+        padding: 5px 10px 0 16px;
+        margin: 0;
+        width: calc(100% - 16px - 16px);
+        font-size: 14px;
+        // color: color($colors, dark);
+      }
+
+      .item-inner {
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+    }
+
+    .item-input-has-focus {
+      background: #EDEDED;
+    }
+
+    .help-text {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: #888888;
+      position: relative;
+
+      .msg-error {
+        color: #D94747;
+        background: white;
+        display: block;
+        position: absolute;
+        top: -5px;
+        width: 100%;
+        border-top: solid 2px #D94747;
+        padding-top: 3px;
+        z-index: 999;
+      }
+    }
+  }
+
+  .prediction-list {
+    height: calc(100vh - 70px);
+    margin: 0;
+    overflow: auto;
+
+    .prediction-item {
+      background: #f6f6f6;
+      border-bottom: 1px solid #dadada;
+
+      &:first-child {
+        border-top: 1px solid #dadada;
+      }
+      ion-icon {
+        margin: auto !important;
+        margin-right: 0.5em !important;
+      }
+      .item-inner {
+        margin-left: 0 !important;
+
+        .label {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .loading-container {
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .spinner {
+      margin: auto;
+      transform: scale(3);
+    }
+    ion-spinner * {
+      // stroke: color($colors, primary);
+    }
+  }
+}
+

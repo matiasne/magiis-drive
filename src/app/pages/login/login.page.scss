@@ -1,0 +1,129 @@
+@import '../../../theme/variables.scss';
+
+ion-content {
+  --padding-top: 24px;
+  --padding-bottom: 0;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  // --background: #f9f7f8;
+}
+
+.btn.primary {
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.restore-pass {
+  background-color: transparent;
+  text-align: center;
+  color: $secondary;
+  font-weight: $bold;
+  font-size: $font14;
+  display: block;
+  width: 100%;
+  margin: 16px auto;
+}
+
+.subtitle {
+  font-size: $font32;
+  font-weight: $bold;
+  display: block;
+  margin: 8px 0 16px;
+}
+
+.btn.btn-social {
+  background-color: transparent;
+  border-radius: 999px;
+  box-shadow: 0px 0px 4px rgba($black, 0.25);
+  color: $dark;
+  font-size: $font12;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+
+  ion-icon {
+    margin-right: 16px;
+    font-size: $font24;
+    color: #3b5998;
+
+    &.ggl {
+      color: #db3236;
+    }
+  }
+}
+
+ion-list {
+  background-color: transparent;
+}
+
+ion-item {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+  // --inner-border-width: 0;
+  // --border-width: 0;
+  --background: rgba(246, 246, 246, 0.6);
+  margin: 8px 0;
+}
+
+ion-input {
+  --background: rgba(246, 246, 246, 0.6);
+  --padding-start: 8px !important;
+}
+
+ion-footer {
+  background-color: $light;
+  color: $dark-soft;
+  padding: 8px;
+  font-size: $font12;
+  text-align: center;
+}
+
+.logo-container {
+  border: solid 1px #95959566;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  min-height: 160px;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 40px;
+
+  &::before {
+    content: "";
+    width: 260px;
+    height: 260px;
+    border: solid 1px #95959533;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "";
+    width: 360px;
+    height: 360px;
+    border: solid 1px #9595951A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  .logo {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,51 @@
+<ion-content class='avatar-modal-content' fullscreen>
+
+  <ion-row>
+    <ion-col  class='modal-close'>
+        <ion-chip (click)="close(false)" >
+          <ion-icon name="md-close" class='modal-close-icon'></ion-icon>
+        </ion-chip>
+    </ion-col>
+
+    <ion-col *ngIf="editable" class='modal-confirm'>
+        <ion-chip (click)="close(true)">
+          <ion-label class='modal-confirm-label'>{{ 'image.button_confirm' | translate }}</ion-label>
+        </ion-chip>
+    </ion-col>
+  </ion-row>
+
+  <div class="avatar-img-container" >
+    <ion-img [src]="image.src"></ion-img>
+  </div>
+</ion-content>
+
+<ion-footer *ngIf="editable" >
+  <ion-grid >
+    <ion-row>
+      <ion-col class="action-space"></ion-col>
+
+      <ion-col class='action-center'>
+        <ion-chip (click)="takePicture()">
+          <ion-icon name="camera" class="modal-action"></ion-icon>
+        </ion-chip>
+        <ion-label color="light" >{{ 'image.button_camera' | translate }}</ion-label>
+      </ion-col>
+
+      <ion-col class="action-center">
+        <ion-chip  (click)="changePicture()">
+          <ion-icon name="ios-images-outline" class="modal-action"></ion-icon>
+        </ion-chip>
+        <ion-label color="light" >{{ 'image.button_gallery' | translate }}</ion-label>
+      </ion-col>
+
+      <ion-col class="action-center">
+        <ion-chip (click)="remove()">
+          <ion-icon name="trash" class="modal-action-danger"></ion-icon>
+        </ion-chip>
+        <ion-label color="light" >{{ 'image.button_delete' | translate }}</ion-label>
+      </ion-col>
+      <ion-col class="action-space"></ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-footer>

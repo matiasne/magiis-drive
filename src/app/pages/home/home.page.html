@@ -1,0 +1,164 @@
+
+<!--
+<ion-header class="main-color-bk" no-border>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-row class="bar">
+      <ion-col>
+        <div
+          id="availability"
+          (click)="canChangeAvailability ? manualToggleAvailability() : null"
+          [ngClass]="availableClass"
+        >
+          <div *ngIf="available && !showSpinner && identityService.operability && !identityService.outOfService">
+            {{ 'home.available_label' | translate }}
+          </div>
+          <div
+            *ngIf="!available && !showSpinner && identityService.operability && !identityService.outOfService"
+          >
+            {{ 'home.not_available_label' | translate }}
+          </div>
+          <div *ngIf="identityService.operability && identityService.outOfService">
+            {{ 'home.out_of_service' | translate }}
+          </div>
+          <div *ngIf="!identityService.operability">
+            {{ 'home.not_active_label' | translate }}
+          </div>
+        </div>
+        <ion-spinner
+          id="availability-spinner"
+          [ngClass]="showSpinnerClass"
+        ></ion-spinner>
+      </ion-col>
+      <ion-col>
+        <fab-overlay></fab-overlay>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <div
+  class="carrier-overlay"
+  padding
+  [hidden]="overlayHidden"
+  (click)="hideOverlay()"
+>
+  <div class="welcome-msg">{{ 'home.welcome_label' | translate }}</div>
+  <img class="carrier-img" [src]="carrierImage" />
+  <div class="continue-msg">{{ 'home.continue_message' | translate }}</div>
+</div> -->
+
+<ion-content>
+  <div class="header-menu">
+    <button>
+      <img [src]="loggedUser?.carrier.carrierImageLogo" class="header-carrier-logo"  />
+    </button>
+    <!-- <ion-menu-toggle>
+      <div class="menu-bar-1"></div>
+      <div class="menu-bar-2"></div>
+    </ion-menu-toggle> -->
+
+    <div class="driver-info" style="display: flex; flex-direction: column; align-items: flex-end;">
+      <span class="driver-name" style="text-align: right;">{{ homeUserInformation?.fullName }}</span>
+      <span class="driver-car" style="text-align: right;">{{ homeUserInformation?.currentVehicle }}</span>
+      <!-- <span class="driver-car">{{ homeUserInformation?.currentVehicleType }}</span> -->
+      <!-- <span class="driver-car">({{ homeUserInformation?.carrierName }} <b>{{ homeUserInformation?.carrierCode }}</b>)</span> -->
+    </div>
+  </div>
+  <div class="driver-base">
+    <div class="driver-available home-icon"  id="availability" (click)="canChangeAvailability ? manualToggleAvailability() : null">
+      <div *ngIf="available && !showSpinner && identityService.operability && !identityService.outOfService" class="home-icon">
+        <img src="../../../assets/images/available-icon.svg" />
+        <span class="available-label"> {{ 'home.available_label' | translate }}</span>
+      </div>
+      <div *ngIf="!available && !showSpinner && identityService.operability && !identityService.outOfService" class="home-icon">
+        <img src="../../../assets/images/not-available-icon.svg" />
+        <span class="available-label">  {{ 'home.not_available_label' | translate }}</span>
+      </div>
+    </div>
+    <div class="driver-location">
+      <div class="driver-home home-icon">
+        <img src="../../../assets/images/base-icon.svg" />
+        <span class="base-label">En base</span>
+      </div>
+      <div class="driver-number">
+        <span>#6/12</span>
+        <span> {{ homeBaseInformation.currentBaseName }}</span>
+      </div>
+    </div>
+    <div class="driver-pass home-icon" (click)="driverStatusClosed === 'ONLINE' || driverStatusClosed === 'OFFLINE' ? startStreetTravel() : driverOnTripAlert()" isDisabled="driverStatusClosed === 'ONLINE' || driverStatusClosed === 'OFFLINE'">
+      <img src="../../../assets/images/passenger-icon.svg" />
+      <span class="pass-label">Pasajero</span>
+    </div>
+  </div>
+
+  <div class="driver-list" (click)="openModalConfirm()">
+    <span class="label">Viaje asignado</span>
+    <div class="travel-item active">
+      <ion-icon name="calendar-clear-outline" class="calendar"></ion-icon>
+      <div class="distance">
+        <span>123,2 km</span>
+        <span>4465-W</span>
+      </div>
+      <div class="direction">
+        <ion-icon name="arrow-forward"></ion-icon>
+        <span>E</span>
+      </div>
+      <ion-icon name="warning" class="warning"></ion-icon>
+      <div class="time">
+        <span>16hs</span>
+        <span>2 hr 30 min</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="driver-list">
+    <span class="label">Viajes disponibles</span>
+
+    <ion-list>
+      <div class="travel-item">
+        <ion-icon name="calendar-clear-outline" class="calendar"></ion-icon>
+        <div class="distance">
+          <span>123,2 km</span>
+          <span>4465-W</span>
+        </div>
+        <div class="direction">
+          <ion-icon name="arrow-forward"></ion-icon>
+          <span>E</span>
+        </div>
+        <ion-icon name="warning" class="warning"></ion-icon>
+        <div class="time">
+          <span>16hs</span>
+          <span>2 hr 30 min</span>
+        </div>
+      </div>
+    </ion-list>
+  </div>
+  <!-- <div
+    class="lost-conection-message"
+    *ngIf="travelService.showLostConectionMessage"
+  >
+    {{ 'home.no_conection_message' | translate }}
+    <div class="retry_connection_button" (click)="refresh_connection()">
+      {{ 'buttons.retry' | translate }}
+    </div>
+  </div>
+
+  <home-driver-information></home-driver-information>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+  />
+  <div #map id="map" class="mymap"></div>
+  <div class="map-spinner-cont" [ngClass]="showMapSpinnerClass">
+    <ion-spinner id="map-spinner" [ngClass]="showMapSpinnerClass"></ion-spinner>
+    {{ 'home.loading_map_message' | translate }}
+  </div>
+  <img class="carrier-img-map" [src]="carrierImage" />
+  <maggis-fab-button (touch)="driverStatusClosed === 'ONLINE' || driverStatusClosed === 'OFFLINE' ? startStreetTravel() : driverOnTripAlert()" [isDisabled]="driverStatusClosed === 'ONLINE' || driverStatusClosed === 'OFFLINE'" img="assets/svg/people-street.svg"></maggis-fab-button> -->
+</ion-content>

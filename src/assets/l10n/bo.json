@@ -1,0 +1,37 @@
+{
+    "currency": {
+        "name": "Boliviano",
+        "name_plural": "Boliviano",
+        "symbol": "Bs",
+        "key": "Bs",
+        "decimalPlaces": 2
+    },
+    "culture": "es",
+    "locale": "es-BO",
+    "dateFormat": "dd/MM/yyyy",
+    "measureUnits": "METRIC",
+    "taxLanguage": {
+        "taxCodes": [
+            {
+                "value": "PRICO",
+                "label": "Principales Contribuyentes"
+            },
+            {
+                "value": "GRACO",
+                "label": "Grandes Contribuyentes"
+            },
+            {
+                "value": "RESTO",
+                "label": "Resto de Contribuyentes"
+            },
+            {
+                "value": "RESTO C",
+                "label": "Resto de Contribuyentes Tipo C"
+            }
+        ],
+        "tax_code_name": "NIT",
+        "personal_id_number": "CI",
+        "business_id_number": "NIT",
+        "specific_tax_lang_key_EXAMPLE": "Specific language key example for taxary language"
+    }
+}

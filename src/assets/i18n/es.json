@@ -1,0 +1,630 @@
+{
+    "login": {
+        "app_welcome": "¡Bienvenido!",
+        "input_email": "Correo",
+        "input_password": "Contraseña",
+        "remember_password": "Recordar contraseña",
+        "button_login": "Entrar",
+        "label_forgotten": "¿Olvidaste tu Contraseña?",
+        "button_create_account": "Crear cuenta",
+        "messages": {
+            "warning_title": "Aviso",
+            "error_title": "Error de inicio de sesión",
+            "user_error": "No se ha ingresado ningun Usuario",
+            "password_error": "No se ha ingresado la Contraseña",
+            "environment": {
+                "prompt_title": "Seleccione Ambiente",
+                "cancel_text": "Cancelar",
+                "cancel_role": "Cancelar",
+                "accept_text": "Aceptar"
+            }
+        }
+    },
+    "logout": {
+        "closing_session": "Cerrando sesión"
+    },
+    "connection_service": {
+        "timeout_error": "Fue un tiempo muy largo de espera. Por favor verificar su conexión y reintentar.",
+        "error_0": "Estas sin internet, revisa tu conexión.",
+        "error_401": "Usuario o Contraseña incorrectos, verifica de nuevo tus datos",
+        "error_403": "Rol incorrecto, verifica tus datos",
+        "error_500": "Error inesperado, por favor reintente más tarde",
+        "error_401_session": "Su sesión ha expirado, por favor ingrese nuevamente.",
+        "error_400": "Ud. se encuentra inactivo. Comuníquese con la central."
+    },
+    "ACTION_NOT_ALLOWED": "Esta acción no está permitida",
+    "restore_pass": {
+        "email": "Correo",
+        "mail_message1": "Se te enviará un correo",
+        "mail_message2": "para recuperar tu Contraseña",
+        "recover": "Recuperar",
+        "warning_title": "Atención",
+        "no_user_warning": "No se ha ingresado ningún Usuario",
+        "sent_title": "Enviado",
+        "sent_message": "Revisa tu correo para resetear tu Contraseña.",
+        "error_401_title": "Usuario incorrecto",
+        "error_403_title": "Rol incorrecto",
+        "error_0_title": "Atención",
+        "error_unknown_title": "Atención",
+        "error_401": "Verifica de nuevo tus datos",
+        "error_403": "Verifica tus datos",
+        "error_0": "Hay dificultades con tu conexión a internet",
+        "error_unknown": "Hay dificultades para realizar ésta acción. Por favor, intente más tarde"
+    },
+    "Inicio": "Inicio",
+    "Viajes": "Viajes",
+    "Preferencias": "Preferencias",
+    "Loading": "Cargando...",
+    "menu": {
+        "home": "Inicio",
+        "trips": "Viajes",
+        "settings": "Preferencias",
+        "statistics": "Estadisticas",
+        "logout": "Salir",
+        "outBase": "Fuera de Base",
+        "inBase": "En Base",
+        "errorInBase": "El Chofer no se encuentra en base o no esta disponible"
+    },
+    "buttons": {
+        "ok": "Aceptar",
+        "cancel": "Cancelar",
+        "close": "Cerrar",
+        "reject": "Rechazar",
+        "confirm": "Buscar Pasajero",
+        "call": "Llamar",
+        "yes": "Si",
+        "no": "No",
+        "edit_travel": "Editar Viaje",
+        "finalize": "Finalizar",
+        "continue": "Continuar",
+        "exit": "Salir",
+        "retry": "Reintentar",
+        "view": "ver",
+        "save": "Guardar",
+        "adjust_now": "Ajustar hora"
+    },
+    "travel_status": {
+        "SEARCHING_DRIVER": "Buscando chofer",
+        "WITH_DRIVER_ASSIGNED": "Chofer asignado",
+        "SEARCHING_DRIVER_SCHEDULED": "Buscando chofer",
+        "WITH_DRIVER_ASSIGNED_SCHEDULED": "Chofer asignado",
+        "GOING_TO_CLIENT": "Buscando pasajero",
+        "GOING_TO_DESTINATION": "Viaje en curso",
+        "ARRIVE_TO_DESTINATION": "Llegó a destino",
+        "WAITING_FOR_PAYMENT": "Esperando pago",
+        "CLOSING_TRAVEL": "Finalizando viaje",
+        "DONE": "Finalizado",
+        "CANCELLED": "Cancelado",
+        "PROGRAMMED": "Programado",
+        "LOST": "Perdido"
+    },
+    "travel_confirm": {
+        "cancel_trip_title": "Rechazar Viaje",
+        "cancel_trip_message": "¿Está seguro que desea rechazar el Viaje?",
+        "travel_assigned": "¡Viaje Asignado!",
+        "label_passenger": "Pasajero",
+        "label_origin": "Origen",
+        "label_destination": "Destino",
+        "label_stop": "Parada",
+        "label_cost": "Costo",
+        "label_estimated_cost": "Costo estimado",
+        "label_estimated_transference_cost": "C. est. de transf.",
+        "label_distance": "Distancia",
+        "label_time": "Tiempo",
+        "label_note": "Nota",
+        "label_programmed": "Viaje programado",
+        "label_schedule": "Horario"
+    },
+    "travel_to_start": {
+        "cancel_trip_title": "Cancelar Viaje",
+        "cancel_trip_message": "¿Está seguro que desea cancelar el viaje?",
+        "gps_alert_title": "Atención",
+        "gps_alert_message": "Hay dificultades para obtener la ubicación. Por favor, revisa tu GPS",
+        "geocerca_alert_title": "Aviso",
+        "geocerca_alert_message": "No se encuentra dentro del radio habilitado para iniciar el Viaje. Si desea continuar debe ingresar el código de desbloqueo.",
+        "sms_cancel": "El Chofer Asignado ha tenido que Cancelar tu Viaje. Por favor reintenta tu pedido. Magiis",
+        "sms_alert_title": "Aviso",
+        "sms_alert_message": "Se le ha enviado un sms al Pasajero Cancelarando el Viaje.",
+        "no_conection_title": "Sin conexión",
+        "no_conection_message": "¿Llamar al operador para dar aviso?",
+        "label_searching": "Buscando Pasajero",
+        "label_wait_time": "Tiempo de Espera",
+        "label_passenger": "Pasajero",
+        "label_origin": "Origen",
+        "label_stop": "Parada",
+        "label_destination": "Destino",
+        "label_go_to_map": "Mapa",
+        "label_note": "Nota",
+        "start_trip": "Empezar Viaje",
+        "canceled_trip": "Viaje Cancelado",
+        "trip_not_available": "El Viaje ya no se encuentra disponible.",
+        "start_trip_message_title": "Empezar Viaje",
+        "start_trip_message": "¿Desea empezar el Viaje?",
+        "start_street_message": "¿Desea iniciar el Viaje?",
+        "full_screen": "Display Recepción",
+        "insert_code": "Ingresar",
+        "insert_code_title": "Código de desbloqueo",
+        "cancellation_insert_code_title": "Código de cancelación",
+        "insert_code_message": "Ingrese el código",
+        "insert_code_error_title": "Error",
+        "insert_code_error_message": "Código incorrecto",
+        "label_code": "Código",
+        "function_not_available": "Función no disponible"
+    },
+    "travel_chat": {
+        "title": "Chat: Viaje",
+        "label_message": "Escribe un mensaje...",
+        "label_driver": "Conductor",
+        "label_passenger": "Pasajero"
+    },
+    "travel_in_progress": {
+        "end_travel_message": "¿Finalizar Viaje?",
+        "gps_alert_title": "Atención",
+        "gps_alert_message": "Hay dificultades para obtener la ubicación. Por favor, revisa tu GPS",
+        "purifying_waypoints": "Depurando ruta de viaje...",
+        "closing_travel": "Cerrando Viaje",
+        "label_in_travel": "En Viaje",
+        "label_passenger": "Pasajero",
+        "label_stop": "Parada",
+        "label_wait": "Espera",
+        "label_continue": "Continuar",
+        "label_route": "Recorrido",
+        "label_origin": "Origen",
+        "label_destination": "Destino",
+        "label_open_destination": "Destino abierto",
+        "label_go_to_chat": "Chat",
+        "label_go_to_map": "Mapa",
+        "travel_edit_alert_title": "Error",
+        "travel_edit_alert_body": "Se ha producido un error al intentar actualizar el Viaje",
+        "next_destination_modal": {
+            "title": "Próximo destino",
+            "subtitle": "Continuar a",
+            "btn_cancel": "Cancelar"
+        },
+        "wrong_device_date": "La fecha de su dispositivo es diferente a la del viaje asignado, Use la hora y zona horaria proporcionada por la red.",
+        "wrong_device_date_before_stop": "Para que se puedan registrar el tiempo de espera use la hora y zona horaria proporcionada por la red."
+    },
+    "travel_edit": {
+        "title": "Editar Viaje",
+        "start": "Origen",
+        "end": "Destino",
+        "stop": "Parada",
+        "confirm": "Confirmar",
+        "invalid_destination": "Destino invalido"
+    },
+    "travel_resume": {
+        "alert_title": "Atención",
+        "insufficient_balance_title": "Saldo Insuficiente",
+        "insufficient_balance_massage": "¿Continuar de todas formas?",
+        "insufficient_balance_block_massage": "La cuenta corriente utilizada no puede exceder el límite establecido.",
+        "unavailable_account_title": "Cuenta no Disponible",
+        "unavailable_account_message": "Elija otro medio de pago.",
+        "travel_payment_error_title": "Pago del Viaje",
+        "label_travel_resume": "Resumen de Viaje",
+        "label_travel_transfer_cost": "Carga de Adicionales",
+        "label_travel_afiliates": "Viaje Afiliados",
+        "label_parking": "Estac.",
+        "label_tolls": "Peaje",
+        "label_other_cost": "Otro costo",
+        "label_wait": "Espera",
+        "label_wait_stops": "Parada",
+        "label_one_way_trip": "Ida",
+        "label_round_trip": "Ida y vuelta",
+        "label_total_ammount": "Total a Cobrar",
+        "label_total_ammount_frecuent": "Total a Cobrar (Viaje frecuente)",
+        "label_final_cost_agency": "Costo final para agencia",
+        "label_additional_cost_agency": "Costo adicional para agencia",
+        "continue": "Continuar",
+        "close_travel": "Cerrar Viaje",
+        "sign": "Firmar y Cerrar viaje",
+        "enter_card": "Ingresar tarjeta",
+        "loading_location": "Obteniendo Ubicación...",
+        "signerPad": "Solicitar Firma",
+        "label_passenger": "Pasajero",
+        "label_travel": "Viaje",
+        "label_distance": "Distancia",
+        "label_duration": "Duración",
+        "dialogs": {
+            "no_connection_title": "Sin conexión a internet",
+            "no_connection_text": "El dispositivo no se encuentra conectado a internet. Método de pago modificado a efectivo.",
+            "calculating_cost": "Calculando costo de viaje",
+            "update_travel": "Actualizando Costo de Viaje",
+            "select_payment_method": "Seleccionar método de pago",
+            "delete_toll": "Eliminar peaje",
+            "delete_parking": "Eliminar Estacionamiento",
+            "delete_other_cost": "Eliminar Costo Extra",
+            "question_delete": "¿Querés Eliminar {{value}} ?",
+            "confirm": "Confirmar",
+            "accept": "Aceptar",
+            "cancel": "Cancelar",
+            "CARD_EXPIRED": "Su tarjeta se encuentra vencida.",
+            "PENDING_CONTINGENCY": "Estamos procesando tu pago. No te preocupes, menos de 2 días hábiles te avisaremos por e-mail si se acreditó.",
+            "PENDING_REVIEW_MANUAL": "Estamos procesando tu pago. No te preocupes, menos de 2 días hábiles te avisaremos por e-mail si se acreditó o si necesitamos más información.",
+            "CC_REJECTED_BAD_FILLED_CARD_NUMBER": "Revisa el número de tarjeta.",
+            "CC_REJECTED_BAD_FILLED_DATE": "Revisa la fecha de vencimiento.",
+            "CC_REJECTED_BAD_FILLED_OTHER": "Revisa los datos.",
+            "CC_REJECTED_BAD_FILLED_SECURITY_CODE": "Revisa el código de seguridad de la tarjeta.",
+            "CC_REJECTED_BLACKLIST": "No pudimos procesar tu pago.",
+            "CC_REJECTED_CALL_FOR_AUTHORIZE": "Debes solicitar autorización por éste monto.",
+            "CC_REJECTED_CARD_DISABLED": "La tarjeta debe ser activada previamente o utilizar otra forma de pago. El teléfono está en el reverso de su tarjeta.",
+            "CC_REJECTED_CARD_ERROR": "No pudimos procesar tu pago.",
+            "CC_REJECTED_DUPLICATED_PAYMENT": "Ya hiciste un pago por ese valor. Si necesitas volver a pagar usa otra tarjeta u otro medio de pago.",
+            "CC_REJECTED_HIGH_RISK": "Tu pago fue rechazado. Elige otro de los medios de pago, te recomendamos con medios en efectivo.",
+            "CC_REJECTED_INSUFFICIENT_AMOUNT": "Tu tarjeta no tiene fondos suficientes.",
+            "CC_REJECTED_INVALID_INSTALLMENTS": "No es posible procesar el pago en las cuotas seleccionadas",
+            "CC_REJECTED_MAX_ATTEMPTS": "Llegaste al límite de intentos permitidos. Elige otra tarjeta u otro medio de pago.",
+            "CC_REJECTED_OTHER_REASON": "Tu proveedor de tarjeta no procesó el pago.",
+            "INVALID_CARD_TOKEN": "La petición de pago expiró. Por favor, intente nuevamente.",
+            "MERCADOPAGO_ERROR": "Error al realizar el pago. Por favor, intente nuevamente.",
+            "CC_REJECTED_NOT_AUTHORIZE": "El pago no fue autorizado.",
+            "CC_REJECTED_NOT_CURRENCY": "La tarjeta no es compatible con la divisa indicada.",
+            "CC_REJECTED_CARD_INVALID": "La tarjeta no es válida.",
+            "CC_REJECTED_REQUIRED_PIN": "Se requiere ingreso de PIN.",
+            "CC_REJECTED_TEST_CARD": "Se ha usado el número de una tarjeta de prueba.",
+            "not_possible_to_close_trip":"No es posible cerrar el viaje. Contacte al operador para un Cierre Administrativo"
+        },
+        "label_type_ticket": "Tipo de Ticket:",
+        "qr_payment_done": "El pago ya fue acreditado",
+        "label_othercost_greater_than_trip": "Otro costo no puede ser mayor al costo del viaje"
+    },
+    "signer": {
+        "label_title": "Firma del pasajero",
+        "label_btn_clean": "Limpiar",
+        "label_btn_save": "Guardar"
+    },
+    "travel_cancel": {
+        "title": "Cancelación de viaje",
+        "cannot_cover_trip": "No puedo cubrir el viaje",
+        "passenger_not_found": "No encontré al pasajero",
+        "return": "Volver",
+        "error": {
+            "title": "Error",
+            "not_in_range": "Debe estar en el radio del punto de origen para seleccionar esta opción."
+        }
+    },
+    "travel_add_toll": {
+        "label_add_toll": "Agregar Peaje",
+        "label_form_name": "Nombre",
+        "label_form_name_example": "Un nombre que identifique el ticket.",
+        "label_form_amount": "Monto",
+        "label_form_ammount_example": "Ingresar el gasto realizado.",
+        "label_form_ticket": "Imagen del ticket",
+        "label_form_ticket_example": "Foto del ticket que refleje el gasto realizado.",
+        "label_button_cancel": "Cancelar",
+        "label_button_save": "Guardar",
+        "label_waiting": "Guardando nuevo peaje",
+        "errors_name": {
+            "pattern": "El nombre contiene caracteres inválidos.",
+            "required": "El nombre es requerido.",
+            "maxlength": "Max. Caracteres 25."
+        },
+        "errors_amount": {
+            "pattern": "Solo se admiten números.",
+            "required": "El monto es requerido.",
+            "maxlength": "Max. Caracteres 6."
+        }
+    },
+    "travel_add_parking": {
+        "label_add_parking": "Agregar Estacionamiento",
+        "label_form_name": "Nombre",
+        "label_form_name_example": "Un nombre que identifique el ticket.",
+        "label_form_amount": "Monto",
+        "label_form_ammount_example": "Ingresar el gasto realizado.",
+        "label_form_ticket": "Imagen del ticket",
+        "label_form_ticket_example": "Foto del ticket que refleje el gasto realizado.",
+        "label_button_cancel": "Cancelar",
+        "label_button_save": "Guardar",
+        "label_waiting": "Guardando nuevo estacionamiento",
+        "errors_name": {
+            "pattern": "El nombre contiene caracteres inválidos.",
+            "required": "El nombre es requerido.",
+            "maxlength": "Max. Caracteres 25."
+        },
+        "errors_amount": {
+            "pattern": "Solo se admiten números.",
+            "required": "El monto es requerido.",
+            "maxlength": "Max. Caracteres 6."
+        }
+    },
+    "travel_add_other_cost": {
+        "label_add_other_cost": "Agregar Costo",
+        "label_form_name": "Descripción",
+        "label_form_name_example": "Una descripción que identifique el ticket.",
+        "label_form_amount": "Monto",
+        "label_form_ammount_example": "Ingresar el gasto realizado.",
+        "label_button_cancel": "Cancelar",
+        "label_button_save": "Guardar",
+        "label_waiting": "Guardando nuevo costo",
+        "errors_name": {
+            "pattern": "El nombre contiene caracteres inválidos.",
+            "required": "El nombre es requerido.",
+            "maxlength": "Max. Caracteres 25."
+        },
+        "errors_amount": {
+            "pattern": "Solo se admiten números.",
+            "required": "El monto es requerido.",
+            "maxlength": "Max. Caracteres 6.",
+            "discount_exceed_travel_cost": "No puede aplicar un descuento mayor al costo del viaje"
+        }
+    },
+    "length_unit": {
+        "kms": {
+            "abbr": "kms",
+            "name": "Kilómetros",
+            "name_singular": "Kilometro"
+        },
+        "miles": {
+            "abbr": "Mil",
+            "name": "Millas",
+            "name_singular": "Milla"
+        },
+        "feet": {
+            "abbr": "Pi",
+            "feet": "Pies"
+        }
+    },
+    "price_agreed": "PACTADO",
+    "Efectivo": "Efectivo",
+    "Cuenta Corriente": "Cuenta Corriente",
+    "Transferencia Bancaria": "Transf. Bancaria",
+    "affiliate": "Afiliado",
+    "ROUND_TRIP": "Ida y Vuelta",
+    "RENTAL": "Viaje a Disposición",
+    "DELIVERY": "Delivery",
+    "FASTEST_ROUTE": "Ruta más rápida",
+    "SHORTEST_ROUTE": "Ruta más corta",
+    "CASH": "Efectivo",
+    "CHECKING_ACCOUNT": "Cuenta Corriente",
+    "TRANSFER": "Transf. Bancaria",
+    "CREDIT_CARD": "Tarjeta Crédito",
+    "QR_CODE": "Código QR",
+    "travel_detail": {
+        "alert_title": "Atención",
+        "error_message": "No se pudo obtener los detalles del Viaje, por favor intente más tarde.",
+        "label_trip": "Viaje: ",
+        "label_parking": "Estacionamiento",
+        "label_toll": "Peaje",
+        "label_other_cost": "Otros costos",
+        "label_wait_time": "Espera",
+        "label_round_trip": "Ida y Vuelta",
+        "label_one_way_trip": "Ida",
+        "label_distance": "Distancia",
+        "label_duration": "Duración",
+        "label_applicant": "Solicitante",
+        "label_passenger_guest": "Invitado",
+        "label_travel_corporate": "Viaje Corporativo",
+        "label_avoid_toll": "Evitar Peajes",
+        "label_avoid_highway": "Evitar Autopistas",
+        "label_transfer_cost": "Costo de transferencia",
+        "get_item_image_not_found": {
+            "alert_title": "Ticket no encontrado",
+            "alert_subtitle": "El {{value}} no tiene ticket cargado."
+        }
+    },
+    "image_attach_modal": {
+        "label_modify_item": "Modificar datos:",
+        "label_button_attach": "Subir foto de los tickets",
+        "no_tickets_attached": "No hay tickets cargados",
+        "label_form_name": "Nombre",
+        "label_form_amount": "Monto",
+        "label_form_ticket": "Imagen del ticket",
+        "label_form_ticket_example": "Foto del ticket que refleje el gasto realizado"
+    },
+    "travel_list": {
+        "label_travels": "Viajes",
+        "label_made": "Realizados",
+        "label_scheduled": "Programados",
+        "label_cancel_trip": "Cancelar viaje",
+        "out_conexion": {
+          "title": "Sin conexión",
+          "message": "¿Llamar al operador para dar aviso?",
+          "button_accept": "Llamar",
+          "button_cancel": "Cancelar"
+        },
+        "cancel_trip_button": {
+            "title": "Cancelar viaje",
+            "message": "¿Desea cancelar este viaje programado?",
+            "button_accept": "Si",
+            "button_cancel": "No"
+        },
+        "label_alert_error_cancel": "Error al cancelar el viaje. ¿Desea llamar al operador para dar aviso?"
+    },
+    "SEARCHING_DRIVER_SCHEDULED": "Programando...",
+    "WITH_DRIVER_ASSIGNED_SCHEDULED": "Programado",
+    "LOST": "Perdido",
+    "Ene": "Ene",
+    "Feb": "Feb",
+    "Mar": "Mar",
+    "Abr": "Abr",
+    "May": "May",
+    "Jun": "Jun",
+    "Jul": "Jul",
+    "Ago": "Ago",
+    "Sep": "Sep",
+    "Oct": "Oct",
+    "Nov": "Nov",
+    "Dic": "Dic",
+    "settings": {
+        "label_settings": "Preferencias",
+        "label_out_of_service": "Fuera de servicio",
+        "label_open_map": "Abrir Mapa Automáticamente",
+        "label_default_map": "Servicio de Mapa Preferido",
+        "label_show_carrier_circle": "Mostrar Area Radio Base Compañía",
+        "label_highlight_addresses": "Resaltar direcciones",
+        "label_language": "Lenguaje",
+        "label_button_submit" : "Guardar"
+    },
+    "home": {
+        "available_label": "Disponible",
+        "not_available_label": "No Disponible",
+        "in_queue": "En cola",
+        "welcome_label": "¡Bienvenido!",
+        "continue_message": " Tap para Continuar",
+        "no_conection_message": "Conexión a internet lenta o inexistente.",
+        "loading_map_message": "Cargando mapa...",
+        "exit_dialog_title": "Salir",
+        "exit_dialog_message": "¿Está seguro que desea salir?",
+        "atention_title": "Atención",
+        "no_gps_message": "Hay dificultades para obtener su ubicación. Por favor, revisa tu GPS o tu conexión",
+        "no_address_message": "No hay una dirección disponible",
+        "finalized_trip_title": "Viaje finalizado",
+        "finalized_trip_message": "El viaje en curso fue finalizado por un operador",
+        "canceled_trip_title": "Viaje Cancelado",
+        "canceled_trip_message": "El Viaje fue Cancelado.",
+        "finalized_canceled_trip_message": "El viaje fue cancelado por el pasajero.",
+        "udpated_trip_title": "Viaje Actualizado",
+        "updated_trip_message": "La información del Viaje actual fue actualizada.",
+        "canceled_scheduled_trip_message": "El Viaje Programado {{value}} fue Cancelado.",
+        "scheduled_trip_dialog": "Se le ha asigando un Viaje Programado",
+        "not_active_title": "Alerta",
+        "not_active_message": "Ud. se encuentra Inactivo. Comuníquese con la Compañía.",
+        "not_active_label": "Inactivo",
+        "out_of_service": "Fuera de servicio",
+        "not_vehicle_assigned": "Ud. no tiene Vehículo Asignado. Comuníquese con la Compañía.",
+        "driver_concurrency": "Actualmente el vehículo {{domain}}, se encuentra online con el chofer {{name}}. Comunícate con la central para continuar. ",
+        "driver_on_trip": "Podra generar un viaje en calle cuando no este con un viaje activo."
+    },
+    "stats": {
+        "title": "Estadísticas",
+        "rateLabel_1": "Conducción",
+        "rateLabel_2": "Limpieza",
+        "rateLabel_3": "Profesionalismo",
+        "rateLabel_4": "Puntualidad",
+        "trips_made": "Viajes Realizados",
+        "total_money": "Total Facturado",
+        "score": "Calificación",
+        "km_traveled": "Recorridos",
+        "filter_today": "Hoy",
+        "filter_monthly": "Mensual",
+        "kmMade": "KM. realizados"
+    },
+    "travel_states_dialogs": {
+        "DRIVER_UNASSIGNED": {
+            "title": "Viaje Desasignado",
+            "subtitle": "El Viaje {{ value }} ha sido Desasignado."
+        }
+    },
+    "image": {
+        "button_confirm": "Confirmar",
+        "button_camera": "Cámara",
+        "button_gallery": "Galería",
+        "button_delete": "Eliminar"
+    },
+    "navigation_app_dialog": {
+        "label_title": "Elija una app",
+        "label_btn_cancel": "Cancelar",
+        "label_btn_ok": "OK"
+    },
+    "credit-card": {
+        "credit_card": "crédito",
+        "debit_card": "débito",
+        "payment": "Pago con Tarjeta",
+        "charge": "COBRAR",
+        "label_card_number": "Número de tarjeta",
+        "label_expiration_date": "Vencimiento",
+        "label_security_code": "CVV",
+        "label_format_date": "Formato MM/AA",
+        "label_format_code": "Código de verificación",
+        "label_doc_type": "Tipo de doc.",
+        "label_doc_number": "Nro de doc.",
+        "label_holder_name": "Nombre del Títular",
+        "label_holder_name_advice": "Tal como aparece en la tarjeta",
+        "label_help_date": "Encontrarás esta fecha al frente de tu tarjeta debajo del número de tarjeta",
+        "label_help_security_code": "Un código de tres dígitos ubicado al reverso de tu tarjeta de crédito",
+        "label_help_security_code_amex": "El CVV es un código de cuatro dígitos ubicado al frente de su tarjeta de crédito",
+        "error_unknown_title": "Atención",
+        "error_unknown": "Hay dificultades para realizar ésta acción. Por favor, intente más tarde",
+        "mercadopago": {
+            "title": "Mercadopago",
+            "token_creation": {
+                "error_code": {
+                    "106": "No puedes realizar pagos a otros países.",
+                    "109": "El método de pago no puede procesar pagos en cuotas, elige otra tarjeta u otro medio de pago.",
+                    "126": "No pudimos procesar tu pago.",
+                    "129": "El método de pago no procesa pagos del monto seleccionado.  Elige otra tarjeta u otro medio de pago.",
+                    "145": "Una de las partes con la que intentas hacer el pago es de prueba y la otra es usuario real.",
+                    "150": "No puedes realizar pagos.",
+                    "151": "No puedes realizar pagos.",
+                    "160": "No pudimos procesar tu pago.",
+                    "204": "Método de pago no disponible, elige otra tarjeta u otro medio de pago.",
+                    "205": "Ingresa el número de tu tarjeta.",
+                    "208": "Elige un mes.",
+                    "209": "Elige un año.",
+                    "212": "Ingresa tu tipo de documento.",
+                    "213": "Ingresa tu documento.",
+                    "214": "Ingresa tu documento.",
+                    "220": "Ingresa tu banco.",
+                    "221": "Ingresa el nombre y apellido.",
+                    "224": "Ingresa el código de seguridad.",
+                    "316": "Ingresa un nombre válido.",
+                    "322": "El tipo de documento es inválido.",
+                    "323": "Revisa tu documento.",
+                    "324": "El documento es inválido.",
+                    "325": "El mes es inválido",
+                    "326": "El año es inválido",
+                    "801": "Realizaste un pago similar hace instantes.  Intenta de nuevo en unos minutos.",
+                    "E301": "Ingresa un número de tarjeta válido.",
+                    "E302": "Revisa el código de seguridad.",
+                    "default_installments_error": "Error al obtener cuotas de la tarjeta",
+                    "default": "No pudimos procesar tu pago."
+                }
+            }
+        }
+    },
+    "notifications": {
+        "geolocation_active": {
+            "title": "Conectado a Magiis",
+            "text": "Obteniendo ubicación"
+        },
+        "geolocation_allow": {
+            "title": "¿Permitir a Magiis acceder a la localización en segundo plano?",
+            "message": "Esta acción es necesaria para utilizar la aplicación",
+            "accept": "Cambiar a Permitir siempre",
+            "cancel": "Cancelar"
+        },
+        "new_travel": {
+            "title": "Viaje asignado",
+            "description": "Pendiente de aceptación"
+        }
+    },
+    "alerts": {
+        "syncing_status": "Sincronizando estado...",
+        "alert_saving_mode_title": "Alerta!",
+        "alert_saving_mode_text": "El dispositivo entro en modo ahoro de energia, esto genera errores en la registración de viajes. Por favor desactivelo"
+    },
+    "permission": {
+        "location": {
+            "title": "Permisos de Ubicación",
+            "message": "Magiis Driver necesita acceder a los permisos de ubicación en todo momento, inclusive cuando la applicación esta en segundo plano o cerrada, para que puedas: aceptar viajes de forma precisa y obtener el precio de un viaje por la distancia real recorrida.",
+            "instructions_message": "Presione <b>Configurar</b> y, en la ventana emergente, habilite los permisos de <b>Ubicación todo el tiempo</b>.",
+            "instructions_message_config": "Presione <b>Configurar</b>, en la sección <b>Permisos</b> seleccione <b>Ubicación</b> y habilite la opción <b>Permitir todo el tiempo</b>.",
+            "instructions_message_config_alt": "Presione <b>Configurar</b>, seleccione la opción <b>Permisos</b> y, en la lista de permisos, habilite <b>Ubicación</b>.",
+            "confirm_label": "Configurar"
+        },
+        "motion": {
+            "title": "Permisos de Actividad física",
+            "message": "Para mejorar la eficiencia del consumo de batería a la hora de obtener su ubicación, Magiis Driver necesita acceder a los permisos de actividad física en todo momento.",
+            "instructions_message": "Presione <b>Configurar</b> y, en la ventana emergente, habilite los permisos de <b>Actividad física</b>.",
+            "instructions_message_config": "Presione <b>Configurar</b>, en la sección <b>Permisos</b> seleccione <b>Actividad física</b> y habilite la opción <b>Permitir</b>.",
+            "instructions_message_config_alt": "Presione <b>Configurar</b>, seleccione la opción <b>Permisos</b> y, en la lista de permisos, habilite <b>Actividad física</b>.",
+            "confirm_label": "Configurar"
+        }
+    },
+    "outdated_version": {
+        "title": "Nueva versión disponible",
+        "text": "Actualiza a la última versión para continuar utilizando la aplicación.",
+        "info": "Cada actualización incluye nuevas funcionalidades, modificaciones y correcciones.",
+        "update": "Actualizar",
+        "update_later": "Actualizar luego"
+    },
+    "payment_method": {
+        "cash": "Efectivo",
+        "checking_account": "Cuenta Corriente",
+        "credit_card": "Tarjeta de Crédito",
+        "qr": "Código QR"
+    },
+    "network": {
+		"without_connection": "Conéctese a Internet para poder hacer seguimiento a su ubicación y cerrar viajes de forma exitosa.",
+		"none_conecction": "No está conectado ni a una red wifi ni a datos móviles, Por favor conéctese a una red."
+	}
+}

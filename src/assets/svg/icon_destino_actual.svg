@@ -1,0 +1,7 @@
+<svg id="icon_siguiente_destino" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <path id="Trazado_2267" data-name="Trazado 2267" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" fill="#54b3a5"/>
+  <g id="Grupo_1554" data-name="Grupo 1554" transform="translate(6 5.516)">
+    <ellipse id="Elipse_175" data-name="Elipse 175" cx="9.107" cy="2.679" rx="9.107" ry="2.679" transform="translate(0 12.698)" fill="#43978b"/>
+    <path id="map-marker-alt-solid" d="M5.349,15.576C.837,9.036,0,8.365,0,5.961a5.961,5.961,0,0,1,11.923,0c0,2.4-.837,3.075-5.349,9.615a.745.745,0,0,1-1.225,0Zm.613-7.131A2.484,2.484,0,1,0,3.477,5.961,2.484,2.484,0,0,0,5.961,8.445Z" transform="translate(3)" fill="#d6fff8"/>
+  </g>
+</svg>

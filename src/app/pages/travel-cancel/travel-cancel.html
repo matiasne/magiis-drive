@@ -1,0 +1,18 @@
+<ion-content class="no-scroll">
+  <ion-grid class="container">
+    <div class="travel-cancel-content">
+      <h2>{{ 'travel_cancel.title' | translate }}</h2>
+    </div>
+    <div>
+    <button (click)="dismiss('CANNOT_COVER')" class="btn primary">
+      {{ 'travel_cancel.cannot_cover_trip' | translate }}
+    </button>
+    <button *ngIf="!isIncomingTrip" (click)="dismiss('PASSENGER_NOT_FOUND')" class="btn">
+      {{ 'travel_cancel.passenger_not_found' | translate }}
+    </button>
+    <button (click)="dismiss(null)" class="btn">
+      {{ 'travel_cancel.return' | translate }}
+    </button>
+    </div>
+  </ion-grid>
+</ion-content>

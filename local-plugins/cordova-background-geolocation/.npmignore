@@ -1,0 +1,12 @@
+*.png
+*.log
+node_modules
+docs
+help
+scripts
+bin
+ISSUE_TEMPLATE.md
+
+src/ionic/index.ts
+src/ionic/tsconfig.json
+*.tgz

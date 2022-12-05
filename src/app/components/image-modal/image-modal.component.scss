@@ -1,0 +1,50 @@
+.avatar-modal-content{
+  background-color: rgba(44, 39, 45, 0.84);
+
+  .modal-close {
+    text-align: left;
+    margin-top: 12px;
+  }
+
+  .modal-close-icon{
+    background: transparent;
+  }
+
+  .modal-confirm {
+    text-align: right;
+    margin-top: 12px;
+  }
+
+  .modal-confirm-label{
+    background: transparent;
+    color: white;
+  }
+
+  .avatar-img-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .avatar-img-container ion-img{
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+  }
+}
+
+.modal-action{
+    background: #69c8b8;
+}
+
+.modal-action-danger{
+    background: #df292e;
+}
+
+.action-center{
+  width: 30%;
+  text-align: center;
+}
+
+.action-space{
+  width: 5%;
+}

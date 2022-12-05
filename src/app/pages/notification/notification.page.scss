@@ -1,0 +1,17 @@
+notification-page {
+    .card-content-ios{
+        padding: 0px;
+    }
+    ion-thumbnail{
+        height: 100% !important;
+    }
+    ion-label{
+        font-size: 12px;
+    }
+    ion-icon{
+        color: darkcyan;
+    }
+    .header button ion-icon {
+        color: white !important;
+    }
+}

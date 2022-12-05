@@ -1,0 +1,12 @@
+  <canvas #myCanvas class="canvas-draw" (touchstart)="handleStart($event)" (touchmove)="handleMove($event)"></canvas>
+
+  <ion-toolbar id="bottom-toolbar">
+
+      <button ion-button (click)="cleanSignPad()" class="button-negative-signer">
+        {{ 'signer.label_btn_clean' | translate }}
+      </button>
+      <button ion-button (click)="saveSign()" class="button-positive-signer">
+        {{ 'signer.label_btn_save' | translate }}
+      </button>
+
+  </ion-toolbar>

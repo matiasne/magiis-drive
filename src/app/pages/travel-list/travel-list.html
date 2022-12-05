@@ -1,0 +1,234 @@
+<ion-content [ngSwitch]="travelFilter">
+  <div class="header-menu">
+    <ion-icon name="arrow-back-outline" (click)="goBack()"></ion-icon>
+    <span class="header-title">{{ 'travel_list.label_travels' | translate }}</span>
+  </div>
+
+  <ion-row class="travel-segment">
+    <ion-col>
+      <ion-segment [(ngModel)]="travelFilter" mode="ios" color="secondary">
+        <ion-segment-button value="SCHEDULED" (click)="getTravelsScheduled()" class="segment-stat">
+          {{ 'travel_list.label_scheduled' | translate }}
+        </ion-segment-button>
+        <ion-segment-button value="MADE" (click)="getTravelsMade()" class="segment-stat">
+          {{ 'travel_list.label_made' | translate }}
+        </ion-segment-button>
+      </ion-segment>
+    </ion-col>
+  </ion-row>
+
+  <ion-list *ngSwitchCase="'SCHEDULED'" class="content-list">
+    <div class="travel-card" *ngFor="let travel of travelScheduledList.items">
+      <div class="date">
+        <span>{{ formatDateDay(travel.creationDate) }}</span>
+        <span class="time">{{ formatDateTime(travel.creationDate) }}</span>
+      </div>
+      <div class="distance">
+        <div>
+          <span>Viaje</span>
+          <span>{{ travel.travelIdForCarrier }}</span>
+        </div>
+        <div>
+          <span>Distancia</span>
+          <span>{{ travel.distanceToPPUP }} km.</span>
+        </div>
+      </div>
+      <div class="location">
+        <div class="dash-line"></div>
+        <div class="origin">
+          <ion-icon name="radio-button-on"></ion-icon>
+          <span>{{travel.origin}}</span>
+        </div>
+        <div class="destination">
+          <ion-icon name="location-outline"></ion-icon>
+          <span>{{travel.destination}}</span>
+        </div>
+      </div>
+
+      <div class="price">
+        <span>Costo estimado</span>
+        <span class="ammount">{{ getCurrencySymbol() }} {{ travel.finalPrice | number:'1.2-2' }}</span>
+      </div>
+    </div>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'MADE'" class="content-list">
+    <ion-accordion-group>
+      <div class="travel-card" *ngFor="let travel of travelMadeList.items">
+        <div class="date">
+          <span>{{ formatDateDay(travel.creationDate) }}</span>
+          <span class="time">{{ formatDateTime(travel.creationDate) }}</span>
+        </div>
+        <div class="distance">
+          <div>
+            <span>Viaje</span>
+            <span>{{ travel.travelIdForCarrier }}</span>
+          </div>
+          <div>
+            <span>Distancia</span>
+            <span>{{ travel.distanceToPPUP }} km.</span>
+          </div>
+        </div>
+        <ion-accordion>
+          <ion-item slot="header" color="light" (click)="showTravel(travel)">
+            <div class="location">
+              <div class="dash-line"></div>
+              <div class="origin">
+                <ion-icon name="radio-button-on"></ion-icon>
+                <span>{{travel.origin}}</span>
+              </div>
+              <div class="destination">
+                <ion-icon name="location-outline"></ion-icon>
+                <span>{{travel.destination}}</span>
+              </div>
+            </div>
+          </ion-item>
+
+          <div slot="content" *ngIf="travel.showTravel">
+            <app-page-travel-detail [data]="travel"></app-page-travel-detail>
+          </div>
+        </ion-accordion>
+
+        <div class="price">
+          <span>{{ parsePaymentMethod(travel.paymentMethod) | translate }}</span>
+          <span class="ammount">{{ getCurrencySymbol() }} {{ travel.finalPrice | number:'1.2-2' }}</span>
+        </div>
+      </div>
+    </ion-accordion-group>
+  </ion-list>
+
+
+
+
+
+
+
+<!--
+    <ion-list *ngSwitchCase="'SCHEDULED'" class="content-list">
+        <ion-item *ngFor="let travel of travelScheduledList.items" >
+            <ion-row class="travel-content" (click)="showTravel(travel)" [ngClass]="{'travel-content-not-done' : travel.state !== 'Realizado'}">
+                <ion-col class="left-col">
+
+                    <ion-row class="programmed-travelCode-row">
+                        <strong> {{ travel.travelIdForCarrier }} </strong>
+                        <img src="assets/images/handshake-solid.svg" class="affi-schedule-logo" *ngIf="travel.affiAgreementId > 0">
+                     </ion-row>
+
+                    <ion-row class="programmed-date-row">
+                      {{ travel.creationDate | date:'d MMM H:mm' : localizationService?.localeData.timezoneOffset : getCurrentLang() }}
+                    </ion-row>
+
+                    <ion-row class="date-row">
+                      <ion-col *ngIf="travel.hideAmountsDriver && travel.paymentMethod === 'CHECKING_ACCOUNT'">
+                        {{ 'price_agreed' | translate }}
+                      </ion-col>
+                      <ion-col *ngIf="!(travel.hideAmountsDriver && travel.paymentMethod === 'CHECKING_ACCOUNT')">
+                        {{ getCurrencySymbol() }} {{ travel.finalPrice | number:'1.2-2' }}
+                      </ion-col>
+                    </ion-row>
+                </ion-col>
+                <ion-col class="right-col">
+                    <ion-row>
+                        <div class="dotted-line"></div>
+                        <div class="origin-row">
+                            <ion-icon ios="ios-pin-outline" md="ios-pin-outline" color="secondary"></ion-icon>
+                            <span>{{travel.origin}}</span>
+                        </div>
+                    </ion-row>
+                    <ion-row>
+                        <div>
+                            <ion-icon ios="ios-pin" md="ios-pin" color="secondary"></ion-icon>
+                            {{travel.destination}}
+                        </div>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row  >
+                <ion-row class="scheduled-state" [ngClass]="{'primary' : travel.serverState === 'WITH_DRIVER_ASSIGNED' || travel.serverState === 'CANCELLED', 'dark' : travel.serverState === 'LOST'}">
+                    {{travel.state | translate}}
+                </ion-row>
+                <p class="cancel-button" *ngIf="travel.serverState === 'WITH_DRIVER_ASSIGNED'" (click)="showCancelDialog(travel.travelId, travel.carrierUserId)">
+                  {{ 'travel_list.label_cancel_trip' | translate }}
+                </p>
+            </ion-row>
+            <ion-row class="cancel-row">
+                <button *ngIf="travel.serverState === 'WITH_DRIVER_ASSIGNED' && canConfirm(travel)" ion-button (click)="confirm(travel)" class="btn-confirm">{{'buttons.confirm' | translate}}</button>
+            </ion-row>
+        </ion-item>
+    </ion-list> -->
+
+    <!--ion-infinite-scroll *ngSwitchCase="'SCHEDULED'" (ionInfinite)="$event.waitFor(doInfiniteTravelsScheduled($event))">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll-->
+
+<!--
+    <ion-list *ngSwitchCase="'MADE'" class="content-list">
+        <ion-item *ngFor="let travel of travelMadeList.items" >
+            <ion-row class="travel-content" [ngClass]="{'travel-content-not-done' : travel.state !== 'Realizado'}">
+                <div class="canceled-bar" *ngIf="travel.finalPrice == 0"></div>
+                <ion-col class="left-col">
+
+                    <ion-row class="date-row">
+                      {{ travel.creationDate | date:'d MMM H:mm' : localizationService?.localeData.timezoneOffset : getCurrentLang() }}
+                    </ion-row>
+
+                    <ion-row class="travelCode-row">
+                       <strong> {{ travel.travelIdForCarrier }} </strong>
+                    </ion-row>
+
+                    <ion-row class="price-row" *ngIf="(travel.hideAmountsDriver && travel.paymentMethod === 'CHECKING_ACCOUNT') && travel.finalPrice != 0">
+                      {{ 'price_agreed' | translate }}
+                    </ion-row>
+                    <ion-row class="price-row" *ngIf="!(travel.hideAmountsDriver && travel.paymentMethod === 'CHECKING_ACCOUNT') && travel.finalPrice != 0">
+                      <span class="currency">{{ getCurrencySymbol() }}</span> {{ travel.finalPrice | number:'1.2-2'}}
+                    </ion-row>
+                    <ion-row class="price-row canceled" *ngIf="travel.finalPrice == 0 || travel.state === 'LOST'">
+                        {{travel.state | translate}}
+                    </ion-row>
+                </ion-col>
+                <ion-col class="right-col">
+                    <ion-row>
+                        <div class="dotted-line"></div>
+                        <div class="origin-row">
+                            <ion-icon ios="ios-pin-outline" md="ios-pin-outline" color="secondary" *ngIf="travel.finalPrice != 0"></ion-icon>
+                            <ion-icon ios="ios-pin-outline" md="ios-pin-outline" color="dark-soft" *ngIf="travel.finalPrice == 0"></ion-icon>
+                            <span>{{travel.origin}}</span>
+                        </div>
+                    </ion-row>
+                    <div *ngFor="let waypoint of travel.waypoints">
+                      <ion-row>
+                        <div class="dotted-line"></div>
+                        <div class="origin-row">
+                          <ion-icon ios="ios-pin" md="ios-pin" color="primary" *ngIf="travel.finalPrice != 0"></ion-icon>
+                          <ion-icon ios="ios-pin" md="ios-pin" color="dark-soft"
+                                    *ngIf="travel.finalPrice == 0"></ion-icon>
+                          {{waypoint.shortName}}
+                        </div>
+                      </ion-row>
+                    </div>
+                    <ion-row>
+                        <div>
+                            <ion-icon ios="ios-pin" md="ios-pin" color="secondary" *ngIf="travel.finalPrice != 0"></ion-icon>
+                            <ion-icon ios="ios-pin" md="ios-pin" color="dark-soft" *ngIf="travel.finalPrice == 0"></ion-icon>
+                            {{travel.destination}}
+                        </div>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row class="payment-cont">
+                <ion-icon class="payment-icon" ios="ios-cash" md="ios-cash" color="dark-soft" *ngIf="travel.paymentMethod === 'CASH'"></ion-icon>
+                <ion-icon class="payment-icon" ios="ios-card" md="ios-card" color="dark-soft" *ngIf="travel.paymentMethod === 'TRANSFER'"></ion-icon>
+                <ion-icon class="payment-icon" ios="ios-return-right" md="ios-return-right" color="dark-soft" *ngIf="travel.paymentMethod === 'CHECKING_ACCOUNT'"></ion-icon>
+                <ion-col class="payment-label">
+                    {{travel.paymentMethod | translate}}
+                </ion-col>
+                <img src="assets/images/handshake-solid.svg" style="max-width: 25px;" *ngIf="travel.affiAgreementId > 0">
+            </ion-row>
+        </ion-item>
+    </ion-list> -->
+
+    <!--ion-infinite-scroll *ngSwitchCase="'MADE'" (ionInfinite)="$event.waitFor(doInfiniteTravelsMade($event))">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll-->
+
+</ion-content>

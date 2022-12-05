@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="HomePage" [disabled]="canTouch()" [ngClass]="{tabHomeSelected: canTouch()}"
+          [routerLink]="['/navigator/home']" routerLinkActive="router-link-active">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="notifications" [routerLink]="['']" routerLinkActive="router-link-active">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-label>Notificaciones</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="call()">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>Llamar</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-menu-toggle>
+          <div class="menu-tab-bottom">
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <ion-label>Mi Cuenta</ion-label>
+          </div>
+        </ion-menu-toggle>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

@@ -1,0 +1,160 @@
+<ion-header>
+  <ion-toolbar transparent hideBackButton>
+    <ion-row>
+      <ion-col col-2 class="header first">
+        <ion-chip (click)="dismiss()">
+          <ion-icon name="md-close" class='modal-close-icon'></ion-icon>
+        </ion-chip>
+      </ion-col>
+      <ion-col col-6 class="header middle">
+        <span class="title">{{ 'credit-card.payment' | translate }}</span>
+      </ion-col>
+      <ion-col col-4 class="header end">
+        <span *ngIf="formGroup.valid" (click)="submit()" class="title">{{ 'credit-card.charge' | translate }}</span>
+        <span *ngIf="!formGroup.valid" class="invalid-charge">{{ 'credit-card.charge' | translate }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <form  *ngIf="template === TEMPLATE_PAYMENT" #form [formGroup]="formGroup">
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <ion-thumbnail *ngIf="thumbnail" item-start class="thumbnail-label">
+              <img class="logo-credit-card" src="{{thumbnail}}" />
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col col-10>
+            <ion-item class="item">
+              <ion-label floating>{{ 'credit-card.label_card_number' | translate }}</ion-label>
+              <ion-input formControlName="cardNumber" id="cardNumber" data-checkout="cardNumber" type="text" mask
+                [maskPattern]="creditCardPattern" onselectstart="return false" onpaste="return false"
+                onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false"
+                autocomplete="off" required inputmode="numeric" (ionChange)="verifyCreditCard()">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5>
+            <ion-item class="item">
+              <ion-label floating>{{ 'credit-card.label_expiration_date' | translate }}</ion-label>
+              <ion-input [readonly]="disabledForm" formControlName="cardExpirationDate" type="text" id="cardExpirationDate" mask
+                [maskPattern]="'**/**'" maxlength="5" onselectstart="return false" onpaste="return false" onCopy="return false"
+                onCut="return false" onDrag="return false" onDrop="return false" autocomplete="off" inputmode="numeric">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-2>
+            <ion-thumbnail (click)="helpExpirationDate()" item-end class="thumbnail-label">
+              <ion-icon name="ios-help-circle" class="help-circle" color="dark-light"></ion-icon>
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col col-3>
+            <ion-item class="item">
+              <ion-label floating>{{ 'credit-card.label_security_code' | translate }}</ion-label>
+              <ion-input [readonly]="disabledForm" formControlName="securityCode" type="text" id="securityCode" maxlength="5"
+                data-checkout="securityCode" onselectstart="return false" onpaste="return false" onCopy="return false"
+                onCut="return false" onDrag="return false" onDrop="return false" autocomplete="off" inputmode="numeric"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-2>
+            <ion-thumbnail (click)="helpSecurityCode()" item-end class="thumbnail-label">
+              <ion-icon name="ios-help-circle" class="help-circle" color="dark-light"></ion-icon>
+            </ion-thumbnail>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-7>
+            <ion-label stacked color="dark-light" class="note">{{ 'credit-card.label_format_date' | translate }}
+            </ion-label>
+          </ion-col>
+          <ion-col col-3>
+            <ion-label stacked color="dark-light" class="note">{{ 'credit-card.label_format_code' | translate }}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item class="item">
+              <ion-label floating>{{ 'credit-card.label_doc_type' | translate }}</ion-label>
+              <ion-select #identificationTypeSelect formControlName="docType" id="docType"
+                (ionChange)="onIdentificationTypeChange(identificationTypeSelect.value)" interface="popover">
+                <ion-select-option *ngFor="let identificationType of identificationTypes">{{ identificationType.name }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item class="item">
+              <ion-label floating>{{ 'credit-card.label_doc_number' | translate }}</ion-label>
+              <ion-input [readonly]="disabledDocNumber" formControlName="docNumber" type="text" id="docNumber" data-checkout="docNumber"
+                onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false"
+                onDrag="return false" onDrop="return false" autocomplete="off" inputmode="numeric"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-item class="item">
+            <ion-label floating>{{ 'credit-card.label_holder_name' | translate }} </ion-label>
+            <ion-input [readonly]="disabledForm" formControlName="cardholderName" type="text" id="cardholderName" data-checkout="cardholderName">
+            </ion-input>
+          </ion-item>
+        </ion-row>
+        <ion-row>
+          <ion-label color="dark-light" stacked class="note">{{ 'credit-card.label_holder_name_advice' | translate }}
+          </ion-label>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </form>
+
+  <div *ngIf="template === TEMPLATE_HELP_EXPIRATION_DATE" >
+    <div class="help-content" *ngIf="creditCardIssuerId != 'amex'" >
+      <img src="assets/svg/credit-card-front.svg" class="help-img"/>
+    </div>
+    <div class="help-content" *ngIf="creditCardIssuerId === 'amex'" >
+      <img src="assets/svg/credit-card-front-amex.svg" class="help-img"/>
+    </div>
+    <ion-row>
+      <h6 class="help-text-container">{{ 'credit-card.label_help_date' | translate }}
+      </h6>
+    </ion-row>
+    <ion-row class="button-accept-container">
+      <button ion-button class="button-accept" (click)="closeHelp()">
+        {{ 'buttons.ok' | translate }}
+      </button>
+    </ion-row>
+
+  </div>
+
+  <div *ngIf="template === TEMPLATE_HELP_SECURITY_CODE">
+    <div class="help-content" *ngIf="creditCardIssuerId != 'amex'">
+      <img src="assets/svg/credit-card-back.svg" class="help-img"/>
+    </div>
+    <div class="help-content" *ngIf="creditCardIssuerId === 'amex'">
+      <img src="assets/svg/credit-card-front-amex-cvv.svg" class="help-img"/>
+    </div>
+
+    <ion-row *ngIf="creditCardIssuerId != 'amex'">
+      <h6 class="help-text-container">
+        {{ 'credit-card.label_help_security_code' | translate }}
+      </h6>
+    </ion-row>
+    <ion-row *ngIf="creditCardIssuerId === 'amex'">
+      <h6 class="help-text-container">
+        {{ 'credit-card.label_help_security_code_amex' | translate }}
+      </h6>
+    </ion-row>
+    <ion-row class="button-accept-container">
+      <button ion-button class="button-accept" (click)="closeHelp()">
+        {{ 'buttons.ok' | translate }}
+      </button>
+    </ion-row>
+
+  </div>
+
+</ion-content>
+

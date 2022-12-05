@@ -1,0 +1,440 @@
+page-travel-in-progress {
+
+  .alert-md .alert-sub-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .header-md::after {
+    background-image: unset;
+  }
+
+  .toolbar-content {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .title {
+    // color: color($colors, light);
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 10px;
+  }
+
+  .header .toolbar-background {
+    // background: color($colors, primary) !important;
+  }
+
+  .toolbar-title {
+    padding-right: 0 !important;
+  }
+
+  ion-title {
+    padding: 0 !important;
+  }
+
+  .currency{
+    font-size: small;
+  }
+
+  .amount{
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .affiliate-wrapper {
+    padding: 5px 16px;
+    background: #E9F6F4;
+    border-bottom: solid 1px;
+    // color: color($colors, primary);
+
+    img {
+      height: 20px;
+    }
+    span {
+      margin-left: 0.5em;
+      font-weight: bold;
+      line-height: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  .container-top {
+    background-color: rgba(193, 228, 222, 0.3);
+    color: #888888;
+    display: block;
+    height: 110px;
+    position: relative;
+    padding: 10px 16px 0 16px;
+
+
+    .passenger-amount {
+      font-weight: 600;
+      font-size: large;
+      display: block;
+    }
+
+    .passenger-wrapper {
+      color: #888888;
+      display: flex;
+      align-items: flex-start;
+
+      .passenger-wrapper-text {
+        padding: 0 5px;
+      }
+
+      .passenger-wrapper-text.travel-cost {
+        text-align: right;
+      }
+
+      .passenger-avatar {
+        margin-right: 10px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+      .passengername {
+        margin: 0;
+        width: calc(100% - 55px);
+
+        .passenger-label {
+          font-size: 14px;
+          display: block;
+        }
+
+        .passenger-name {
+          margin-top: 2px !important;
+          font-size: 16px;
+          font-weight: bold;
+          display: block;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .btn-stop {
+      position: absolute;
+      height: 110px;
+      width: 110px;
+      // background: url(../assets/svg/travel-in-progress/background_stop_verde.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      left: calc(50% - 55px);
+      bottom: -55px;ptravekl
+
+      /* Ripple effect doesn't work*/
+      .ripple {
+        transition: background 0.8s;
+      }
+      .ripple:hover {
+        background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+      }
+      .ripple:active {
+        background-color: #6eb9f7;
+        background-size: 100%;
+        transition: background 0s;
+      }
+      /* Ripple effect doesn't work*/
+
+      .btn-stop-container {
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 16px;
+        // color: color($colors, light);
+      }
+      .stop-off {
+        font-weight: 600;
+
+        .label-wait {
+          margin-top: 5px;
+        }
+      }
+      .stop-on {
+        .timerTitle {
+          font-weight: 400;
+        }
+        .time {
+          margin-top: 2px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+      }
+    }
+    .on-wait {
+      // background: url(../assets/svg/travel-in-progress/background_stop_red.svg);
+    }
+  }
+  .container-header-trip {
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    margin-top: 50px;
+
+    .col {
+      padding: 0;
+    }
+    .container-title-trip {
+      font-size: 14px;
+      color: #888888;
+      font-weight: 600;
+    }
+    .edit-travel {
+      text-align: right;
+
+      .edit-travel-icon {
+        border-radius: 50%;
+        height: 45px !important;
+        width: 45px;
+        margin: 0;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+
+        ion-icon {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .overflow-row {
+    height: calc(100% - 355px);
+    overflow: auto;
+  }
+  .container-trip {
+    width: 100%;
+    display: block;
+    margin: 10px 0 20px;
+
+    .trip-col {
+      position: relative;
+      display: block;
+      padding: 0 16px;
+
+      .travel-label {
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .trip-detail {
+          margin: 0;
+          width: calc(100% - 20px);
+          display: inline-block;
+          vertical-align: top;
+          padding: 13px 0;
+          margin-left: 10px;
+          border-bottom: 1px solid #EEEEEE;
+          font-size: large;
+          font-weight: 600;
+        }
+        small {
+          font-size: 12px;
+          color: #888;
+          display: block;
+        }
+        span {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .travel-origin-label,
+      .travel-waypoint-label {
+        padding: 0;
+        overflow: visible;
+      }
+      .travel-origin-label:after,
+      .travel-waypoint-label:after {
+        content: '';
+        width: 1px;
+        height: 22px;
+        position: absolute;
+        bottom: -9px;
+        left: 4px;
+        border-left: dotted 4px #aaa;
+      }
+      .current-destination {
+        font-weight: 600;
+        // color: color($colors, secondary);;
+      }
+      .icon-trip {
+        font-size: 14px;
+        font-weight: 700;
+        width: 16px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .icon-visited {
+        font-size: 15px;
+      }
+      .icon-current {
+        height: 15px;
+        width: 15px;
+        margin-left: -2px;
+      }
+
+      .travel-destination-label {
+        .icon-trip {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .icono-call-alternative {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+
+  .buttons-edit {
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+    padding: 0 10px;
+
+    .button-positive {
+      width: 100%;
+      font-size: 25px;
+      height: 9rem !important;
+    }
+  }
+
+  .title-label {
+    margin-left: 10px;
+    float: none;
+    color: #FFFFFF;
+  }
+
+  .estimate-label {
+    font-size: 16px;
+    // color: color($colors, dark-soft);
+    margin: 2px 8px 2px 0;
+  }
+
+  .estimate-import {
+    font-weight: 600;
+    font-size: 19px;
+    margin: 0px 8px 8px 0;
+  }
+
+  .estimate-time {
+    // color: color($colors, dark);
+    font-weight: 600;
+  }
+
+  .dark-soft {
+    // color: color($colors, dark-soft);
+  }
+
+  .detail-card {
+    box-shadow: 0 7px 11px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    margin-bottom: 20px;
+  }
+
+  ion-card {
+    box-shadow: 0 7px 11px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    ion-label {
+      margin: 2px 8px 8px 0 !important;
+    }
+  }
+
+  .button-map.activated {
+    // background-color: color($colors, secondary) !important;
+    // color: color($colors, light);
+  }
+
+  .fab-btn {
+    position: unset !important;
+    bottom: 65px;
+    right: 16px;
+    .button-inner {
+      flex-direction: column;
+    }
+    .fab-map {
+      height: 56px !important;
+      width: 56px !important;
+    }
+
+    ion-icon { font-size: 16px; }
+    .fab-map-text {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+  .footer-main-container {
+    position: absolute;
+    bottom: 105px;
+    display: flex;
+    min-height: 60px;
+    padding: 0 16px 10px 16px;
+    width: 100%;
+    align-items: center;
+
+    .col { padding: 0; }
+    .roundTrip-label {
+      background-color: #EDD7E6;
+      // color: color($colors, secondary);
+      font-weight: 400;
+
+      ion-icon {
+        font-size: 1em;
+        padding: 2px;
+      }
+    }
+    .col-map {
+      justify-content: flex-end;
+      display: flex;
+    }
+  }
+  .buttons-wrapper {
+    padding: 10px 0;
+    background: white;
+    //box-shadow: 0 -2px 5px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: block;
+    .col {
+      padding: 0px 16px;
+    }
+    .col-finish {
+      display: block;
+    }
+    .button-positive {
+      width: 100%;
+      font-size: 25px;
+      height: 9rem !important;
+    }
+  }
+
+  .container-buttons-trip {
+    display: flex;
+    align-items: center;
+    padding: 0 10px 16px!important;
+    width: 100%;
+
+    .button-edit-travel {
+      width: calc(100% - 10px);
+      margin-left: 10px!important;
+    }
+    ion-icon {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+}

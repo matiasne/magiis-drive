@@ -1,0 +1,64 @@
+<ion-content>
+  <div class="header-menu">
+    <ion-icon name="arrow-back-outline" (click)="goBack()"></ion-icon>
+    <span class="header-title">{{ 'stats.title' | translate }}</span>
+  </div>
+
+  <div class="wrapper">
+    <ion-row class="stats-history">
+      <ion-col>
+        <ion-segment [(ngModel)]="statMonthlyDaily" mode="ios" color="secondary">
+          <ion-segment-button value="daily" class="segment-stat" (click)="filter_today()">
+            {{'stats.filter_today' | translate}}
+          </ion-segment-button>
+          <ion-segment-button value="monthly" class="segment-stat" (click)="filter_monthly()">
+            {{'stats.filter_monthly' | translate}}
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+
+    <div class="stat-box">
+      <div class="stat-wrapper">
+        <div class="stars">
+          <ion-icon class="star" name="{{ stats.ratings[0].rate >= 1 ? 'star' : 'star-outline' }}"></ion-icon>
+          <ion-icon class="star" name="{{ stats.ratings[0].rate >= 2 ? 'star' : 'star-outline' }}"></ion-icon>
+          <ion-icon class="star" name="{{ stats.ratings[0].rate >= 3 ? 'star' : 'star-outline' }}"></ion-icon>
+          <ion-icon class="star" name="{{ stats.ratings[0].rate >= 4 ? 'star' : 'star-outline' }}"></ion-icon>
+          <ion-icon class="star" name="{{ stats.ratings[0].rate >= 5 ? 'star' : 'star-outline' }}"></ion-icon>
+          <span class="votes">{{stats.numberOfRatings}}</span>
+        </div>
+        <span>{{'stats.score' | translate}}</span>
+      </div>
+
+      <div class="ion-no-padding" *ngIf="details">
+        <div class="stat-wrapper" *ngFor="let item of stats.ratings | slice:1 ; let i = index">
+          <div class="stars">
+            <ion-icon class="star" name="{{item.rate >= 1 ? 'star' : 'star-outline' }}"></ion-icon>
+            <ion-icon class="star" name="{{item.rate >= 2 ? 'star' : 'star-outline' }}"></ion-icon>
+            <ion-icon class="star" name="{{item.rate >= 3 ? 'star' : 'star-outline' }}"></ion-icon>
+            <ion-icon class="star" name="{{item.rate >= 4 ? 'star' : 'star-outline' }}"></ion-icon>
+            <ion-icon class="star" name="{{item.rate >= 5 ? 'star' : 'star-outline' }}"></ion-icon>
+          </div>
+          <span> {{rateDescription[i] | translate}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-title">{{stats.numberOfTrips}}</span>
+      <span class="stat-subtitle">{{'stats.trips_made' | translate}}</span>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-title">{{ getCurrencySymbol() }} {{stats.moneyOfTrips}}</span>
+      <span class="stat-subtitle">{{'stats.total_money' | translate}}</span>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-title">{{ stats.distanceTraveled }}</span>
+      <span class="stat-subtitle"> {{'stats.kmMade' | translate}}</span>
+    </div>
+  </div>
+</ion-content>

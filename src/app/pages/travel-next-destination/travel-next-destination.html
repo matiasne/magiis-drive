@@ -1,0 +1,50 @@
+<ion-content>
+  <ion-grid class="container">
+    <h2 class="title-modal"> {{ 'travel_in_progress.next_destination_modal.title' | translate }}: </h2>
+
+    <!-- Next destination -->
+    <ion-row>
+      <button ion-button class="btn-action next-destination" (click)="goNextDestination()">
+        <ion-row class="btn-container">
+          <ion-col class="btn-wrapper">
+            <img class="btn-icon" src="assets/svg/icon_siguiente_destino.svg">
+            <p class="btn-text">
+              <span class="text-bold"> {{ nextDestination.line_one }} </span>
+              <span class="text-regular"> {{ nextDestination.line_two }} </span>
+            </p>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-row>
+
+    <!-- Divider -->
+    <ion-row class="container-divider">
+      <div class="divisor">
+        <p>o</p>
+      </div>
+    </ion-row>
+
+    <!-- Continue current destination -->
+    <ion-row>
+      <span class="btn-subtitle"> {{ 'travel_in_progress.next_destination_modal.subtitle' | translate }}:</span>
+      <button ion-button class="btn-action continue-destination" (click)="continueDestination()">
+        <ion-row class="btn-container">
+          <ion-col class="btn-wrapper">
+            <img class="btn-icon" src="assets/svg/icon_destino_actual.svg">
+            <p class="btn-text">
+              <span class="text-bold"> {{ currentDestination.line_one }} </span>
+              <span class="text-regular"> {{ currentDestination.line_two }} </span>
+            </p>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+<!-- <ion-footer class="nex-destination-footer">
+  <button ion-button (click)="cancel()">
+    {{ 'travel_in_progress.next_destination_modal.btn_cancel' | translate }}
+  </button>
+</ion-footer> -->

@@ -1,0 +1,44 @@
+page-signer {
+
+    .divSigner {
+        justify-content: center;
+        z-index: 11;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        display: flex;
+        width: auto;
+        height: auto;
+        background-color: white;
+        text-align: center;
+        align-items: flex-end;
+        padding-left: 25px;
+    }
+
+    .button-positive-signer {
+    //  background: color($colors, secondary);
+    //  color: color($colors, light);
+    //  border: 1px solid color($colors, secondary);
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0!important;
+    }
+    .button-negative-signer {
+    //  background: color($colors, light);
+    //  color: color($colors, secondary);
+    //  border: 1px solid color($colors, secondary);
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .button-signer {
+      text-align: center;
+    }
+
+    .signer-pad{
+      z-index: 99999999;
+      height: 500px;
+    }
+}

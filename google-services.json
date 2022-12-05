@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "892730106075",
+    "firebase_url": "https://magiis-uat.firebaseio.com",
+    "project_id": "magiis-uat",
+    "storage_bucket": "magiis-uat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892730106075:android:b9823b2e6aa14417446cfe",
+        "android_client_info": {
+          "package_name": "com.magiis.app.uat.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892730106075-poj50i2tl4jrdte4cl142k8h16h23tug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZXVp2Texl0VzCNexyO8M8tmXS4N6aUrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892730106075-poj50i2tl4jrdte4cl142k8h16h23tug.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "892730106075-6c8tolgqu63draffiueh3slqosmpvcbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magiis.app.uat.passenger",
+                "app_store_id": "1495246544"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892730106075:android:b18d8c8c05c40f66446cfe",
+        "android_client_info": {
+          "package_name": "com.magiis.app.uat.passenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892730106075-poj50i2tl4jrdte4cl142k8h16h23tug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZXVp2Texl0VzCNexyO8M8tmXS4N6aUrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892730106075-poj50i2tl4jrdte4cl142k8h16h23tug.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "892730106075-6c8tolgqu63draffiueh3slqosmpvcbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.magiis.app.uat.passenger",
+                "app_store_id": "1495246544"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

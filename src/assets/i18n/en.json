@@ -1,0 +1,628 @@
+{
+    "login": {
+        "app_welcome": "Welcome!",
+        "input_email": "Email",
+        "input_password": "Password",
+        "remember_password": "Remember password",
+        "button_login": "Login",
+        "label_forgotten": "Did you forget the password?",
+        "button_create_account": "New Account",
+        "messages": {
+            "warning_title": "Warning",
+            "error_title": "Login error",
+            "user_error": "No User",
+            "password_error": "No password",
+            "environment": {
+                "prompt_title": "Select Environment",
+                "cancel_text": "Cancel",
+                "cancel_role": "cancel",
+                "accept_text": "Ok"
+            }
+        }
+    },
+    "logout": {
+        "closing_session": "Closing session"
+    },
+    "connection_service": {
+        "timeout_error": "Time Out Error. Please verify your conection and retry.",
+        "error_0": "NO Internet Access",
+        "error_401": "Invalid User or Password !",
+        "error_403": "Invalid Role, please verify data",
+        "error_500": "Unexpected Error, Please retry later",
+        "error_401_session": "Session Expired, please Login again.",
+        "error_400": "Chauffer NO Longer Active. Contact your Company."
+    },
+    "ACTION_NOT_ALLOWED": "Action Not Allowed",
+    "restore_pass": {
+        "email": "Email",
+        "mail_message1": "Email Sent",
+        "mail_message2": "Retrieve Password.",
+        "recover": "Recover",
+        "warning_title": "Warning",
+        "no_user_warning": "No User Entered",
+        "sent_title": "Sent",
+        "sent_message": "Check Your Email to reset your password.",
+        "error_401_title": "Invalid User",
+        "error_403_title": "Invalid Role",
+        "error_0_title": "Warning",
+        "error_unknown_title": "Warning",
+        "error_401": "Verify your data again",
+        "error_403": "Verify your data",
+        "error_0": "Internet Access Difficulties ",
+        "error_unknown": "Ups ! Something Happened !. Please try later"
+    },
+    "Inicio": "Home",
+    "Viajes": "Trips",
+    "Preferencias": "Settings",
+    "Loading": "Loading...",
+    "menu": {
+        "home": "Home",
+        "trips": "Trips",
+        "settings": "Settings",
+        "statistics": "Statistics",
+        "logout": "Logout",
+        "outBase": "Out of Base",
+        "inBase": "In Base",
+        "errorInBase": "Driver is not in base or is not available"
+    },
+    "buttons": {
+        "ok": "Ok",
+        "cancel": "Cancel",
+        "close": "Close",
+        "reject": "Reject",
+        "confirm": "Picking Passenger",
+        "call": "Call",
+        "yes": "Yes",
+        "no": "No",
+        "edit_travel": "Edit Travel",
+        "finalize": "Finalize",
+        "continue": "Continue",
+        "exit": "Exit",
+        "retry": "Retry",
+        "view": "View",
+        "save": "Save",
+        "adjust_now": "Adjust now"
+    },
+    "travel_status": {
+        "SEARCHING_DRIVER": "Chauffer Searching",
+        "WITH_DRIVER_ASSIGNED": "Chauffer Assigned",
+        "SEARCHING_DRIVER_SCHEDULED": "Chauffer Searching",
+        "WITH_DRIVER_ASSIGNED_SCHEDULED": "Chauffer Assigned",
+        "GOING_TO_CLIENT": "Pax Picking",
+        "GOING_TO_DESTINATION": "In Course",
+        "ARRIVE_TO_DESTINATION": "Arrive at Destination",
+        "WAITING_FOR_PAYMENT": "Waiting for Payment",
+        "CLOSING_TRAVEL": "Closing trip",
+        "DONE": "Finalized",
+        "CANCELLED": "Canceled",
+        "PROGRAMMED": "Programed",
+        "LOST": "Lost"
+    },
+    "travel_confirm": {
+        "cancel_trip_title": "Cancel Trip",
+        "cancel_trip_message": "Are you sure to Cancel Trip ?",
+        "travel_assigned": "Trip Assigned!",
+        "label_passenger": "Passenger",
+        "label_origin": "Start",
+        "label_destination": "Destination",
+        "label_stop": "Stop",
+        "label_cost": "Cost",
+        "label_estimated_cost": "Estimated cost",
+        "label_estimated_transference_cost": "Est. transf. cost",
+        "label_distance": "Distance",
+        "label_time": "Time",
+        "label_note": "Note",
+        "label_programmed": "Programmed trip",
+        "label_schedule": "Schedule"
+    },
+    "travel_to_start": {
+        "cancel_trip_title": "Cancel trip",
+        "cancel_trip_message": "Are you sure to Cancel Trip ?",
+        "gps_alert_title": "Warning",
+        "gps_alert_message": "Problem Obtaining Location. Please, check your GPS",
+        "geocerca_alert_title": "Notice",
+        "geocerca_alert_message": "Cannot Start Trip. You are not in PAX pick up radius. If you want to continue you must enter the unlock code.",
+        "sms_cancel": "Driver Canceled your trip. Please Retry ",
+        "sms_alert_title": "ALERT ",
+        "sms_alert_message": "SMS has been sent to PAX canceling the trip.",
+        "no_conection_title": "NOT Internet Access",
+        "no_conection_message": "Call Operator ?",
+        "label_stop": "Stop",
+        "label_searching": "Picking Passenger",
+        "label_wait_time": "Wait Time",
+        "label_passenger": "Passenger",
+        "label_origin": "From",
+        "label_destination": "To",
+        "label_go_to_map": "Go Map",
+        "label_note": "Note",
+        "start_trip": "Start Trip",
+        "canceled_trip": "Trip Canceled",
+        "trip_not_available": "Trip NO more Availabe ",
+        "start_trip_message_title": "Start Trip",
+        "start_trip_message": "Start the Trip ?",
+        "start_street_message": "Start the Trip?",
+        "full_screen": "Reception Display",
+        "insert_code": "Enter",
+        "insert_code_title": "Unlock code",
+        "cancellation_insert_code_title": "Cancellation code",
+        "insert_code_message": "Enter the code",
+        "insert_code_error_title": "Error",
+        "insert_code_error_message": "Incorrect code",
+        "label_code": "Code",
+        "function_not_available": "Function not available"
+    },
+    "travel_chat": {
+        "title": "Chat: Travel",
+        "label_message": "Write a message...",
+        "label_driver": "Driver",
+        "label_passenger": "Passenger"
+    },
+    "travel_in_progress": {
+        "end_travel_message": "Finalize Trip?",
+        "gps_alert_title": "Atention",
+        "gps_alert_message": "Problem Obtaining Location. Please, Check your GPS",
+        "purifying_waypoints": "Purifying travel route...",
+        "closing_travel": "Closing Trip",
+        "label_in_travel": "In Progress",
+        "label_stop": "Stop",
+        "label_wait": "Wait",
+        "label_continue": "Continue",
+        "label_route": "Route",
+        "label_passenger": "Passenger",
+        "label_origin": "Start",
+        "label_destination": "Destination",
+        "label_open_destination": "Open destination",
+        "label_go_to_map": "Map",
+        "label_go_to_chat": "Chat",
+        "travel_edit_alert_title": "Error",
+        "travel_edit_alert_body": "Ups ! Error Updating Trip",
+        "next_destination_modal": {
+            "title": "Next destination",
+            "subtitle": "Continue to",
+            "btn_cancel": "Cancel"
+        }
+    },
+    "travel_edit": {
+        "title": "Edit Trip",
+        "start": "From",
+        "end": "To",
+        "stop": "Stop",
+        "confirm": "Save",
+        "invalid_destination": "Invalid destination"
+    },
+    "travel_resume": {
+        "alert_title": "Warning",
+        "insufficient_balance_title": "Insufficient Balance",
+        "insufficient_balance_massage": "Continue Anyway?",
+        "insufficient_balance_block_massage": "The checking account used cannot exceed the established limit.",
+        "unavailable_account_title": "Account Not Available",
+        "unavailable_account_message": "Choose Another Payment Way",
+        "travel_payment_error_title": "Payment",
+        "label_travel_resume": "Trip Summary",
+        "label_travel_transfer_cost": "Additional charges",
+        "label_travel_afiliates": "Afiliates Travel",
+        "label_parking": "Parking",
+        "label_tolls": "Toll",
+        "label_other_cost": "Other cost",
+        "label_wait": "Wait",
+        "label_wait_stops": "Stop",
+        "label_one_way_trip": "One Way",
+        "label_round_trip": "Round Trip",
+        "label_total_ammount": "Total Amount",
+        "label_total_ammount_frecuent": "Total Amount ",
+        "label_final_cost_agency": "Final cost for agency",
+        "label_additional_cost_agency": "Additional cost for agency",
+        "continue": "Continue",
+        "close_travel": "Close Trip",
+        "sign": "Sign and Close travel",
+        "enter_card": "Enter card",
+        "loading_location": "Getting Location...",
+        "signerPad": "Signature ",
+        "label_passenger": "Passenger",
+        "label_travel": "Travel",
+        "label_distance": "Distance",
+        "label_duration": "Duration",
+        "dialogs": {
+            "no_connection_title": "No internet access",
+            "no_connection_text": "The device is not connected to the internet. Payment method modified to cash.",
+            "calculating_cost": "Calculating cost",
+            "update_travel": "Updating Trip Cost",
+            "select_payment_method": "Select payment method",
+            "delete_toll": "Remove Toll",
+            "delete_parking": "Remove Parking",
+            "delete_other_cost": "Remove Extra Cost",
+            "question_delete": "Remove {{value}} ?",
+            "confirm": "Confirm",
+            "accept": "Accept",
+            "cancel": "Cancel",
+            "CARD_EXPIRED": "Your card is expired.",
+            "PENDING_CONTINGENCY": "We are processing your payment. Do not worry, less than 2 business days we will notify you by email if it was accredited",
+            "PENDING_REVIEW_MANUAL": "We are processing your payment. Do not worry, less than 2 business days we will notify you by email if it has been accredited or if we need more information.",
+            "CC_REJECTED_BAD_FILLED_CARD_NUMBER": "Check the card number.",
+            "CC_REJECTED_BAD_FILLED_DATE": "Check the expiration date.",
+            "CC_REJECTED_BAD_FILLED_OTHER": "Review all the data.",
+            "CC_REJECTED_BAD_FILLED_SECURITY_CODE": "Check the card's security code.",
+            "CC_REJECTED_BLACKLIST": "We were unable to process your payment.",
+            "CC_REJECTED_CALL_FOR_AUTHORIZE": "You must request authorization for this amount",
+            "CC_REJECTED_CARD_DISABLED": "The card must be previously activated or use another way of payment. The phone is on the back of your card.",
+            "CC_REJECTED_CARD_ERROR": "We were unable to process your payment.",
+            "CC_REJECTED_DUPLICATED_PAYMENT": "You already made a payment for that value. If you need to pay again, use another card or other payment method.",
+            "CC_REJECTED_HIGH_RISK": "Your payment was declined. Choose another payment method, we recommend you with cash.",
+            "CC_REJECTED_INSUFFICIENT_AMOUNT": "Your card does not have sufficient funds.",
+            "CC_REJECTED_INVALID_INSTALLMENTS": "It is not possible to process the payment in the selected installments.",
+            "CC_REJECTED_MAX_ATTEMPTS": "You have reached the limit of allowed attempts. Choose another card or other payment method.",
+            "CC_REJECTED_OTHER_REASON": "Your card provider did not process the payment.",
+            "INVALID_CARD_TOKEN": "Card data expired. Please try again.",
+            "MERCADOPAGO_ERROR": "Error when making the payment. Please try again.",
+            "CC_REJECTED_NOT_AUTHORIZE": "Payment not authorized.",
+            "CC_REJECTED_NOT_CURRENCY": "The card is not compatible with the indicated currency.",
+            "CC_REJECTED_CARD_INVALID": "The card is not valid.",
+            "CC_REJECTED_REQUIRED_PIN": "It is required PIN.",
+            "CC_REJECTED_TEST_CARD": "You have used a test card number.",
+            "not_possible_to_close_trip":"It is not possible to close the trip. Contact the operator for an Administrative Closure"
+
+        },
+        "label_type_ticket": "Ticket Image:",
+        "qr_payment_done": "The payment has been done",
+        "label_othercost_greater_than_trip": "Other cost cannot be greater than the trip cost"
+    },
+    "signer": {
+        "label_title": "Passenger Signature",
+        "label_btn_clean": "Clean",
+        "label_btn_save": "Save"
+    },
+    "travel_cancel": {
+        "title": "Trip cancellation",
+        "cannot_cover_trip": "I can't cover the trip",
+        "passenger_not_found": "I didn't find the passenger",
+        "return": "Return",
+        "error": {
+            "title": "Action not allowed",
+            "not_in_range": "You must be in the origin location to select this option"
+        }
+    },
+    "travel_add_toll": {
+        "label_add_toll": "Add Toll",
+        "label_form_name": "Name",
+        "label_form_name_example": "Toll Identif.",
+        "label_form_amount": "Amount",
+        "label_form_ammount_example": "Input the incurred expense.",
+        "label_form_ticket": "Ticket Image",
+        "label_form_ticket_example": "Ticket's photo showing the expense incurred.",
+        "label_button_cancel": "Cancel",
+        "label_button_save": "Save",
+        "label_waiting": "Saving Toll",
+        "errors_name": {
+            "pattern": "Name Contains Invalid Characters.",
+            "required": "Name Required.",
+            "maxlength": "Max.25 Chars"
+        },
+        "errors_amount": {
+            "pattern": "Only Numbers Allowed.",
+            "required": "Amount Required",
+            "maxlength": "Max. 6 Chars "
+        }
+    },
+    "travel_add_parking": {
+        "label_add_parking": "Add Parking",
+        "label_form_name": "Name",
+        "label_form_name_example": "Parking Identif.",
+        "label_form_amount": "Amount",
+        "label_form_ammount_example": "Input the incurred expense.",
+        "label_form_ticket": "Ticket Image",
+        "label_form_ticket_example": "Ticket's photo showing the expense incurred.",
+        "label_button_cancel": "Cancel",
+        "label_button_save": "Save",
+        "label_waiting": "Saving Parking",
+        "errors_name": {
+            "pattern": "Name Contains Invalid Characters.",
+            "required": "Name Required ",
+            "maxlength": "Max 25 Chars "
+        },
+        "errors_amount": {
+            "pattern": "Only Numbers Allowed.",
+            "required": "Amount Required.",
+            "maxlength": "Max 6 Chars "
+        }
+    },
+    "travel_add_other_cost": {
+        "label_add_other_cost": "Add Cost",
+        "label_form_name": "Description",
+        "label_form_name_example": "Ticket Identif.",
+        "label_form_amount": "Amount",
+        "label_form_ammount_example": "Input the incurred expense.",
+        "label_button_cancel": "Cancel",
+        "label_button_save": "Save",
+        "label_waiting": "Saving New Cost",
+        "errors_name": {
+            "pattern": "Name Contains Invalid Characters.",
+            "required": "Name Required ",
+            "maxlength": "Max 25 Chars "
+        },
+        "errors_amount": {
+            "pattern": "Only Numbers Allowed.",
+            "required": "Amount Required.",
+            "maxlength": "Max 6 Chars ",
+            "discount_exceed_travel_cost": "Cannot apply a discount greater than trip cost"
+        }
+    },
+    "length_unit": {
+        "kms": {
+            "abbr": "kms",
+            "name": "Kilometers",
+            "name_singular": "Kilometer"
+        },
+        "miles": {
+            "abbr": "Mil",
+            "name": "Miles",
+            "name_singular": "Mile"
+        },
+        "feet": {
+            "abbr": "Ft",
+            "name": "Feet"
+        }
+    },
+    "price_agreed": "AGREED",
+    "Efectivo": "Cash",
+    "Cuenta Corriente": "Checking Account",
+    "Transferencia Bancaria": "Transfer",
+    "affiliate": "Affiliate",
+    "ROUND_TRIP": "Round Trip",
+    "RENTAL": "Rental",
+    "DELIVERY": "Delivery",
+    "FASTEST_ROUTE": "Fastest route",
+    "SHORTEST_ROUTE": "Shortest route",
+    "CASH": "Cash",
+    "CHECKING_ACCOUNT": "Checking Account",
+    "TRANSFER": "Transfer",
+    "CREDIT_CARD": "Credit Card",
+    "QR_CODE": "QR Code",
+    "travel_detail": {
+        "alert_title": "Warning",
+        "error_message": "Error Ocurred getting Trip Details",
+        "label_trip": "Trip: ",
+        "label_parking": "Parking",
+        "label_toll": "Toll",
+        "label_other_cost": "Other costs",
+        "label_wait_time": "Wait Time",
+        "label_round_trip": "Round Trip",
+        "label_one_way_trip": "One Way Trip",
+        "label_distance": "Distance",
+        "label_duration": "Duration",
+        "label_applicant": "Applicant",
+        "label_passenger_guest": "Guest ",
+        "label_travel_corporate": "Corporate Trip",
+        "label_avoid_toll": "Avoid Tolls",
+        "label_avoid_highway": "Avoid Highway",
+        "label_transfer_cost": "Transfer Cost",
+        "get_item_image_not_found": {
+            "alert_title": "Ticket not found",
+            "alert_subtitle": "The {{value}} has no ticket loaded."
+        }
+    },
+    "image_attach_modal": {
+        "label_modify_item": "Modify data",
+        "label_button_attach": "Upload Tickets",
+        "no_tickets_attached": "No tickets attached",
+        "label_form_name": "Name",
+        "label_form_amount": "Amount",
+        "label_form_ticket": "Ticket's image",
+        "label_form_ticket_example": "Ticket's photo showing the expense incurred."
+    },
+    "travel_list": {
+        "label_travels": "Trips",
+        "label_made": "Realized",
+        "label_scheduled": "Scheduled",
+        "label_cancel_trip": "Cancel trip",
+        "out_conexion": {
+          "title": "Without connection",
+          "message": "Call the operator to notify?",
+          "button_accept": "Call",
+          "button_cancel": "Cancel"
+        },
+        "cancel_trip_button": {
+            "title": "Cancel trip",
+            "message": "Do you want to cancel this scheduled trip?",
+            "button_accept": "Yes",
+            "button_cancel": "No"
+        },
+        "label_alert_error_cancel": "Error canceling the trip. Do you want to call the operator to give notice?"
+    },
+    "SEARCHING_DRIVER_SCHEDULED": "Scheduling...",
+    "WITH_DRIVER_ASSIGNED_SCHEDULED": "Scheduled",
+    "LOST": "Lost",
+    "Ene": "Jan",
+    "Feb": "Feb",
+    "Mar": "Mar",
+    "Abr": "Apr",
+    "May": "May",
+    "Jun": "Jun",
+    "Jul": "Jul",
+    "Ago": "Aug",
+    "Sep": "Sep",
+    "Oct": "Oct",
+    "Nov": "Nov",
+    "Dic": "Dec",
+    "settings": {
+        "label_settings": "Settings",
+        "label_out_of_service": "Out of service",
+        "label_open_map": "Open Map Automatically",
+        "label_default_map": "Preferred Map Service",
+        "label_show_carrier_circle": "Show Base Radius",
+        "label_highlight_addresses": "Highlight addresses",
+        "label_language": "Language",
+        "label_button_submit" : "Save"
+    },
+    "home": {
+        "available_label": "Available",
+        "not_available_label": "Not Available",
+        "in_queue": "In queue",
+        "welcome_label": "Welcome!",
+        "continue_message": "Tap to Continue",
+        "no_conection_message": "Internet Access Problems.",
+        "loading_map_message": "Loading Map...",
+        "exit_dialog_title": "Exit",
+        "exit_dialog_message": "Are You Sure to Exit?",
+        "atention_title": "Atention",
+        "no_gps_message": "Problem obtaining your location. Please, check your GPS or network.",
+        "no_address_message": "No Address",
+        "finalized_trip_title": "Trip finalized",
+        "finalized_trip_message": "The trip was finalized by an operator",
+        "canceled_trip_title": "Trip Canceled",
+        "canceled_trip_message": "Trip Canceled.",
+        "finalized_canceled_trip_message": "The trip was canceled by the passenger.",
+        "udpated_trip_title": "Updated Trip",
+        "updated_trip_message": "Trip Updated.",
+        "canceled_scheduled_trip_message": "Scheduled Trip {{value}} Canceled.",
+        "scheduled_trip_dialog": "Scheduled Trip Assigned ",
+        "not_active_title": "Alert",
+        "not_active_message": "Chauffer No longer Active. Contact Your Company.",
+        "not_active_label": "Not Active",
+        "out_of_service": "Out of service",
+        "not_vehicle_assigned": "No Vehicle Assinged. Contact Your Company",
+        "driver_concurrency": "Currently the vehicle {{domain}} is online with the driver {{name}}. Contact the central to continue. ",
+        "driver_on_trip": "You could generate a trip on the street when you are not on an active trip."
+    },
+    "stats": {
+        "title": "Stats",
+        "rateLabel_1": "Driving",
+        "rateLabel_2": "Cleaning",
+        "rateLabel_3": "Professionalism",
+        "rateLabel_4": "Puntuality",
+        "trips_made": "Trips Realized",
+        "total_money": "TOTAL MONEY",
+        "score": "SCORE",
+        "km_traveled": "Trips",
+        "filter_today": "Today",
+        "filter_monthly": "Monthly",
+        "kmMade": "KM. travelled"
+    },
+    "travel_states_dialogs": {
+        "DRIVER_UNASSIGNED": {
+            "title": "Trip Deassigned ",
+            "subtitle": "Trip {{value}} Deassigned ."
+        }
+    },
+    "image": {
+        "button_confirm": "Confirm",
+        "button_camera": "Camera",
+        "button_gallery": "Gallery",
+        "button_delete": "Delete"
+    },
+    "navigation_app_dialog": {
+        "label_title": "Choose an app",
+        "label_btn_cancel": "Cancel",
+        "label_btn_ok": "OK"
+    },
+    "credit-card": {
+        "credit_card": "credit",
+        "debit_card": "debit",
+        "payment": "Card Payment",
+        "charge": "COLLECT",
+        "label_card_number": "Card Number",
+        "label_expiration_date": "Expiration Date",
+        "label_security_code": "CSC",
+        "label_format_date": "Format MM/YY",
+        "label_format_code": "Card security code",
+        "label_doc_type": "Type Identification",
+        "label_doc_number": "Id number",
+        "label_holder_name": "Owner Name",
+        "label_holder_name_advice": "Exactly as it is on the card",
+        "label_help_date": "You will find this date on the front of your card under the card number",
+        "label_help_security_code": "A three-digit code located on the back of your credit card",
+        "error_unknown_title": "Warning",
+        "error_unknown": "There are difficulties in carrying out this action. Please try later",
+        "mercadopago": {
+            "title": "Mercadopago",
+            "token_creation": {
+                "error_code": {
+                    "106": "You cannot make payments to other countries.",
+                    "109": "The payment method cannot process installment payments, choose another card or other payment method.",
+                    "126": "We were unable to process your payment.",
+                    "129": "The payment method does not process payments of the selected amount. Choose another card or other payment method.",
+                    "145": "One of the parties with which you are trying to make the payment is trial and the other is a real user.",
+                    "150": "You cannot make payments.",
+                    "151": "You cannot make payments.",
+                    "160": "We were unable to process your payment.",
+                    "204": "Payment method not available, choose another card or other payment method.",
+                    "205": "Enter your card number.",
+                    "208": "Choose a month.",
+                    "209": "Choose a year.",
+                    "212": "Enter your type of identification.",
+                    "213": "Enter your identification number.",
+                    "214": "Enter your identification number.",
+                    "220": "Enter your bank.",
+                    "221": "Enter the first and last name.",
+                    "224": "Enter the security code.",
+                    "316": "Please enter a valid name.",
+                    "322": "Identification type is wrong.",
+                    "323": "Check your identification",
+                    "324": "The identification number is wrong.",
+                    "325": "The month is wrong",
+                    "326": "The year is wrong",
+                    "801": "You made a similar payment moments ago. Please try again in a few minutes.",
+                    "E301": "Please enter a valid card number.",
+                    "E302": "Check the security code.",
+                    "default_installments_error": "Error getting card installments",
+                    "default": "We were unable to process your payment."
+                }
+            }
+        }
+    },
+    "notifications": {
+        "geolocation_active": {
+            "title": "Connected to Magiis",
+            "text": "Getting location"
+        },
+        "geolocation_allow": {
+            "title": "Allow Magiis access to this device's location in the background?",
+            "message": "This action is required to use the application",
+            "accept": "Change to Allow all the time",
+            "cancel": "Cancel"
+        },
+        "new_travel": {
+            "title": "Travel assigned",
+            "description": "Waiting for acceptance"
+        }
+    },
+    "alerts": {
+        "syncing_status": "Syncing status...",
+        "alert_saving_mode_title": "Alert!",
+        "alert_saving_mode_text": "The device went into power saving mode, this generates trip log errors. Turn it off"
+    },
+    "permission": {
+        "location": {
+            "title": "Location permissions",
+            "message": "Magiis Driver needs to know your location at all times, even when the app is closed or in the background, to: accept trips precisely and calculate the real price of a trip.",
+            "instructions_message": "Press <b>Configure</b> and in the pop-up enable <b>Location permissions all the time</b>.",
+            "instructions_message_config": "Press <b>Configure</b>, in the <b>Permissions</b> section select <b>Location</b> and check the option <b>Allow all the time</b>.",
+            "instructions_message_config_alt": "Press <b>Configure</b>, select <b>Permissions</b> and enable <b>Location</b>.",
+            "confirm_label": "Configure"
+        },
+        "motion": {
+            "title": "Physical activity permissions",
+            "message": "To improve the efficiency of battery consumption when obtaining your location, Magiis Driver needs to access your physical activity permissions at all times.",
+            "instructions_message": "Press <b>Configure</b> and in the pop-up enable <b>Physical activity permissions</b>.",
+            "instructions_message_config": "Press <b>Configure</b>, in the <b>Permissions</b> section select <b>Physical activity</b> and check the option <b>Allow</b>.",
+            "instructions_message_config_alt": "Press <b>Configure</b>, select <b>Permissions</b> and enable <b>Physical activity</b>.",
+            "confirm_label": "Configure"
+        }
+    },
+    "outdated_version": {
+        "title": "New version available",
+        "text": "Update to the latest version to continue using the application.",
+        "info": "Each update includes new functionalities, modifications and corrections.",
+        "update": "Update",
+        "update_later": "Update later"
+    },
+    "payment_method": {
+        "cash": "Cash",
+        "checking_account": "Checking Account",
+        "credit_card": "Credit Card",
+        "qr": "QR Code"
+    },
+    "network": {
+		"without_connection": "Connect to the Internet so you can track your location and successfully close trips.",
+		"none_conecction": "You are not connected to a Wi-Fi network or mobile data, please connect to a network."
+	}
+}

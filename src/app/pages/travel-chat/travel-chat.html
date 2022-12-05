@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar transparent>
+    <p class="title">{{ 'travel_chat.title' | translate }} {{ travelIdForCarrier }} ({{ travelPassengerName }})</p>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll="false">
+  <div class="messages-container">
+    <div class="messages" #messagesContainer padding [scrollTop]="messagesContainer.scrollHeight">
+      <div *ngFor="let message of messages; let i = index">
+        <p *ngIf="message.from == 'D' && (i == 0 || messages[i - 1].from != message.from)" class="message-label-driver">
+          {{ message.author ? message.author : ("travel_chat.label_driver" | translate) }}
+        </p>
+        <p *ngIf="message.from == 'P' && (i == 0 || messages[i - 1].from != message.from)" class="message-label-passenger">
+          {{ message.author ? message.author : ("travel_chat.label_passenger" | translate) }}
+        </p>
+        <div class="message" [ngClass]="{'message-driver': message.from == 'D', 'message-passenger': message.from == 'P'}">
+          <p class="message-text">{{ message.body }}</p>
+          <p class="message-schedule">{{ message.schedule | date: 'H:mm' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inputs" padding>
+    <div class="message-input-container">
+      <input
+        [(ngModel)]="message"
+        class="message-input-field"
+        type="text"
+        placeholder="{{ 'travel_chat.label_message' | translate }}"
+      />
+    </div>
+    <button ion-button round class="btn-message-send" (click)="sendMessage()">
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </div>
+</ion-content>

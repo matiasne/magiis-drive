@@ -1,0 +1,35 @@
+<ion-row class="search-row" [class.incomplete]="(!last || !isMultiple) && (!item.place || !item.input)">
+  <ion-col>
+    <div class="track track-origin" *ngIf="!index">
+      <ion-icon ios="ios-radio-button-on" md="md-radio-button-on" color="primary"></ion-icon>
+    </div>
+    <div class="track track-waypoint" *ngIf="!item.editable && index > 0 && !last">
+      <img src="assets/svg/check-circle-solid.svg">
+    </div>
+    <div class="track track-waypoint" *ngIf="item.editable && index > 0 && !last">
+        <ion-icon ios="md-radio-button-off" md="md-radio-button-off" class="stop-icon" color="primary"></ion-icon>
+      </div>
+      <div class="track track-destination" *ngIf="index && last">
+        <ion-icon ios="ios-pin" md="md-pin" color="secondary"></ion-icon>
+      </div>
+
+    <div class="input-form">
+      <ion-item no-lines class="trailing-icon">
+        <ion-label floating>{{ label | translate }} {{ index > 0 && isMultiple && !last ? index : "" }}</ion-label>
+        <ion-input name="input-from"
+          [ngModel]="item.input"
+          (ionFocus)="onFocus(item)"
+          [disabled]="!item.editable"
+          [readonly]="true"
+        ></ion-input>
+
+        <button *ngIf="item.editable && index && item.place" ion-button icon-only clear color="danger" type="button" item-right (click)="removeItem.emit(index)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+        <button *ngIf="item.editable && index && last && !item.place && isMultiple" ion-button icon-only clear color="dark" type="button" item-right (click)="setRoundTrip.emit(index)">
+          <ion-icon class="round-trip" ios="md-git-compare" md="md-git-compare" color="primary"></ion-icon>
+        </button>
+      </ion-item>
+    </div>
+  </ion-col>
+</ion-row>

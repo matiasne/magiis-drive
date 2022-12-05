@@ -1,0 +1,16 @@
+<button ion-item detail-none no-lines
+  (click)="toggleAccordion()"
+  class="accordion-header"
+  [class.active]="expanded">
+  <ion-label>
+    <ng-content select="[header]"></ng-content>
+  </ion-label>
+</button>
+<!-- Expandable content section -->
+<div #accordionContent
+  [class.active]="expanded"
+  class="accordion-content">
+  <ion-list>
+    <ng-content select="[content]"></ng-content>
+  </ion-list>
+</div>

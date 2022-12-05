@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="start">
+      <button ion-button (click)="close()" clear>
+          <ion-icon ios="ios-close" md="md-close"></ion-icon>
+      </button>
+
+      <ion-title>
+      {{ "travel_edit.title" | translate }}
+      </ion-title>
+    </div>
+
+    <div class="end">
+      <button ion-button (click)="dismiss()" class="confirm-button" [disabled]="!isValid()">
+        {{ "travel_edit.confirm" | translate }}
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="dots-container">
+
+    <travel-edit-input
+      [class.can-orderer]="canOrderer"
+      *ngFor="let item of staticWaypoints; let index = index;"
+      [item]="item"
+      [index]="index"
+      [isMultiple]="staticWaypoints.length + editableWaypoints.length > 2"
+      [isRound]="false"
+      [last]="false"
+      [label]="getLabel(index)"
+      (placeSelected)="placeSelected($event)"
+      (removeItem)="removeItem($event)"
+      (setRoundTrip)="setRoundTrip($event)"
+    ></travel-edit-input>
+
+    <ion-list class="reorder-list">
+      <ion-item-group
+        [reorder]="canOrderer"
+        (ionItemReorder)="reorderItems($event)"
+        [class.reorder-visible]="canOrderer"
+        [class.reorder-enabled]="canOrderer"
+      >
+        <ion-item
+          *ngFor="let item of editableWaypoints | slice : 0 : -1; let index = index;"
+          class="reorder-item"
+        >
+          <travel-edit-input
+            [item]="item"
+            [index]="staticWaypoints.length + index"
+            [isMultiple]="editableWaypoints.length > 2"
+            [isRound]="editableWaypoints[0] === item"
+            [last]="false"
+            [label]="getLabel(staticWaypoints.length + index)"
+            (placeSelected)="placeSelected($event)"
+            (removeItem)="removeItem($event)"
+            (setRoundTrip)="setRoundTrip($event)"
+          ></travel-edit-input>
+        </ion-item>
+
+      </ion-item-group>
+    </ion-list>
+
+    <travel-edit-input
+      [class.can-orderer]="canOrderer"
+      *ngFor="let item of editableWaypoints | slice:editableWaypoints.length - 1;"
+      [item]="item"
+      [index]="staticWaypoints.length + editableWaypoints.length - 1"
+      [isMultiple]="staticWaypoints.length + editableWaypoints.length > 2"
+      [isRound]="editableWaypoints[0] === item"
+      [last]="true"
+      [label]="getLabel(staticWaypoints.length + editableWaypoints.length - 1)"
+      (placeSelected)="placeSelected($event)"
+      (removeItem)="removeItem($event)"
+      (setRoundTrip)="setRoundTrip($event)"
+    ></travel-edit-input>
+
+  </div>
+</ion-content>

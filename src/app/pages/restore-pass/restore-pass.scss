@@ -1,0 +1,67 @@
+@import '../../../theme/variables.scss';
+
+ion-content{
+  background: var( --ion-color-light);
+  color: var( --ion-color-light);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-end: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 180px;
+  margin: 24px auto;
+}
+
+.forgot-title {
+  color: $black;
+  font-size: $font32;
+  font-weight: $bold;
+  margin: 8px auto;
+  text-align: center;
+}
+
+.forgot-text {
+  color: $black;
+  font-size: $font16;
+  text-align: center;
+  margin: 8px auto;
+}
+
+ion-row {
+  width: 100%;
+}
+
+ion-input {
+  background-color: $light-dark;
+  width: 100%;
+  border-bottom: solid 1px $dark-softer;
+  margin: 16px auto;
+}
+
+.errorMessage {
+  color: var( --ion-color-danger-red);
+  margin-top: -1em;
+  text-align: center;
+}
+
+ion-footer {
+  background-color: var( --ion-color-light);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    height: 24px;
+    margin: 0;
+  }
+}

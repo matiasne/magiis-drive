@@ -1,0 +1,44 @@
+export class TravelAuditModel {
+  travelId?: number;
+  id?: number;
+  idForCarrier?: number;
+  carrierId?: number;
+  creationDate?: Date;
+  channel?: string;
+  channelUserId?: number;
+  channelUserName?: string;
+  channelVersion?: string;
+  webVersion?: string;
+  carrierRateName?: string;
+  carrierRateIsActive?: boolean;
+  carrierRateType?: string;
+  carrierRateId?: number;
+  carrierRateVersion?: string;
+  vehicleId?: number;
+  driverId?: number;
+  driverName?: string;
+  driverAppVersion?: string;
+  driverOsType?: string;
+  driverOsVersion?: string;
+  driverPhoneModel?: string;
+  driverAcceptTime?: Date;
+  driverAcceptPosition?: string;
+  driverDistanceToPax?: number;
+  driverRateId?: number;
+  driverRateVersion?: string;
+  paxUserId?: number;
+  paxName?: string;
+  paxAppVersion?: string;
+  paxOsType?: string;
+  paxOsVersion?: string;
+  paxPhoneModel?: string;
+  paxWaitingTime?: number;
+  travelStartTime?: Date;
+  travelFinishTime?: Date;
+  tripDelta?: number;
+  driverPlacesUpdate?: boolean;
+  driverPickupPosition?: string;
+  driverPickupDistance?: number;
+
+  constructor() {}
+}

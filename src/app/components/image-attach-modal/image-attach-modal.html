@@ -1,0 +1,84 @@
+<ion-header>
+  <div class="container-header">
+    <div class="title-header">
+      <img class="icon-header" [src]="
+        (type === 'TOLL'
+        ? 'assets/svg/toll-road.svg'
+        : 'assets/svg/parking-sign.svg')"
+      >
+      <h2 class="title">
+        {{ 'image_attach_modal.label_modify_item' | translate }}
+      </h2>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid class="container">
+    <ion-row class="form-container">
+      <form [formGroup]="form">
+
+        <!-- Name -->
+        <div class="input-form">
+          <ion-item no-lines>
+            <ion-label floating>{{ 'image_attach_modal.label_form_name' | translate }} *</ion-label>
+            <ion-input type="text" formControlName="name" (ionChange)="updateView()"></ion-input>
+          </ion-item>
+        </div>
+
+        <!-- Price -->
+        <div class="input-form">
+          <ion-item no-lines class="leading-icon">
+            <ion-label floating>{{ 'image_attach_modal.label_form_amount' | translate }}</ion-label>
+            <ion-input type="number" formControlName="price"></ion-input>
+          </ion-item>
+        </div>
+
+        <!-- Picture -->
+        <div *ngIf="canUploadImage" class="input-form">
+
+          <button class="button-upload-attach" *ngIf="!item.image" (click)="takePicture()">
+            <ion-icon ios="ios-cloud-upload" md="md-cloud-upload" class="icon-upload"></ion-icon>
+            {{ 'image_attach_modal.label_form_ticket' | translate }}
+          </button>
+
+          <div *ngIf="item.image" class="container-uploaded-images">
+            <div class="img-container">
+              <img class="uploaded-image" [src]="sanitize(item.image)">
+              <span class="delete-image" (click)="deletePicture()"><ion-icon name="trash" class="delete-icon"></ion-icon></span>
+            </div>
+          </div>
+
+          <div class="help-text">
+            <span>{{ 'image_attach_modal.label_form_ticket_example' | translate }}</span>
+          </div>
+
+        </div>
+
+      </form>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="image-attach-footer">
+  <ion-buttons class="buttons">
+    <button ion-button (click)="cancel()" clear class="cancel">
+      {{ "buttons.cancel" | translate }}
+    </button>
+    <button ion-button (click)="editItem()" class="confirm">
+      {{ "buttons.save" | translate }}
+    </button>
+  </ion-buttons>
+</ion-footer>
+
+<!-- ERROR MESSAGES -->
+<ng-template #nameError>
+  <ng-container *ngIf="!name.valid  && (name.dirty || name.touched)">
+    <div class="msg-error">
+      <span *ngIf="name.errors?.pattern">{{ 'travel_add_toll.errors_name.pattern' | translate }}</span>
+      <span *ngIf="name.errors?.required">{{ 'travel_add_toll.errors_name.required' | translate }}</span>
+      <span *ngIf="name.errors?.maxlength">{{ 'travel_add_toll.errors_name.maxlength' | translate }}</span>
+    </div>
+  </ng-container>
+</ng-template>
+<!-- END ERROR MESSAGES -->

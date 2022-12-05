@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar transparent hideBackButton>
+    <span class="title">{{'travel_confirm.travel_assigned' | translate}}</span>
+    <fab-overlay></fab-overlay>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row *ngIf="data?.affiliateData" class="affiliate-wrapper">
+    <img src="assets/images/handshake-solid.svg">
+    <span>{{ 'affiliate' | translate }} {{ data?.affiliateData?.carrierName }}</span>
+  </ion-row>
+  <ion-row class="passenger-wrapper">
+
+    <div (click)="openPreview()">
+      <img [src]="data.passengerImage ? data.passengerImage : 'assets/images/passenger_avatar_default.png'"
+           class="passenger-avatar">
+      <div class="edit-button">
+        <ion-icon name="md-eye"></ion-icon>
+      </div>
+    </div>
+
+    <ion-col class="passenger-wrapper-text">
+      <ion-row ion-text color="dark" class="passenger-label">
+        {{'travel_confirm.label_passenger' | translate}}
+      </ion-row>
+      <ion-row class="passenger-name">
+        {{data.passengerName}}
+      </ion-row>
+      <ion-row class="travel-number">
+        {{data.travelIdForCarrier}}
+      </ion-row>
+      <button ion-fab class="fab-map cancel-travel-btn" (click)="cancelTravel()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="data.roundTrip" class="roundTrip-label">
+    <ion-icon ios="ios-swap" md="md-swap"></ion-icon>  {{ 'ROUND_TRIP' | translate }}
+  </ion-row>
+
+  <ion-row *ngIf="data.travelType === 'RENTAL'" class="roundTrip-label">
+    {{ 'RENTAL' | translate }}
+  </ion-row>
+  <ion-row *ngIf="data.travelType === 'DELIVERY'" class="roundTrip-label">
+    {{ 'DELIVERY' | translate }}
+  </ion-row>
+
+  <ion-row justify-content-center bottom class="detail-card">
+    <ion-col class="detail-card-estimate" col-12>
+      <ion-row col-12>
+        <ion-col>
+          <ion-label *ngIf="data.paymentMethod === 'CHECKING_ACCOUNT' && data.hideAmountsDriver" class="estimate-import" text-center>{{ 'price_agreed' | translate }}</ion-label>
+          <ion-label *ngIf="!(data.paymentMethod === 'CHECKING_ACCOUNT' && data.hideAmountsDriver)" class="estimate-import" text-center>{{ getCurrencySymbol() }} {{ data.cost }}</ion-label>
+          <ion-label class="estimate-label" text-center>{{'travel_confirm.label_cost' | translate}}</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label class="estimate-import" text-center>{{ data.km | distance | number:'.0-1' }} {{ 'kms' | distanceDescription: true }}</ion-label>
+          <ion-label class="estimate-label" text-center>{{'travel_confirm.label_distance' | translate}}</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label class="estimate-import estimate-time" text-center>{{ data.time }}</ion-label>
+          <ion-label class="estimate-label" text-center>{{'travel_confirm.label_time' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col class="detail-card-route" [ngClass]="{'border-bottom-secondary': data.isProgrammed}" col-12 text-center>
+      <hr class="detail-card-separator" />
+      <span *ngIf="data.fastestRoute">{{ 'FASTEST_ROUTE' | translate }}</span>
+      <span *ngIf="!data.fastestRoute">{{ 'SHORTEST_ROUTE' | translate }}</span>
+    </ion-col>
+    <ion-col col-12 *ngIf="data.isProgrammed">
+      <ion-row col-12>
+        <ion-col>
+          <ion-label class="travel-pickup-value" text-center>
+            <img src="assets/images/travel-programmed.svg">
+          </ion-label>
+          <ion-label class="travel-pickup-label" text-center>{{'travel_confirm.label_programmed' | translate}}</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-label class="travel-pickup-value" text-center>{{ data.travelDate | date:'H:mm' : localizationService?.localeData.timezoneOffset : getCurrentLang() }}</ion-label>
+          <ion-label class="travel-pickup-label" text-center>{{'travel_confirm.label_schedule' | translate}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="note-label dark-soft" >
+    {{'travel_confirm.label_note' | translate}}
+  </ion-row>
+  <ion-content class="note-content">
+    <p text-justify [ngClass]="{'text-strong': highlightAddresses}">
+      {{data.note}}
+    </p>
+  </ion-content>
+
+
+  <ion-row class="buttons-wrapper">
+    <ion-col>
+      <button ion-button (click)="confirm()" class="button-positive">
+        {{'buttons.confirm' | translate}}
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

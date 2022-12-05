@@ -1,0 +1,37 @@
+{
+    "currency": {
+        "name": "Quetzal",
+        "name_plural": "Quetzales",
+        "symbol": "Q",
+        "key": "Q",
+        "decimalPlaces": 2
+    },
+    "culture": "es",
+    "locale": "es-GT",
+    "dateFormat": "dd/MM/yyyy",
+    "measureUnits": "METRIC",
+    "taxLanguage": {
+        "taxCodes": [
+            {
+                "value": "GT-MT",
+                "label": "CAT 1 GT"
+            },
+            {
+                "value": "GT-RI",
+                "label": "CAT 2 GT"
+            },
+            {
+                "value": "GT-RNI",
+                "label": "CAT 3 GT"
+            },
+            {
+                "value": "GT-EX",
+                "label": "CAT 4 GT"
+            }
+        ],
+        "tax_code_name": "NIT",
+        "personal_id_number": "DPI",
+        "business_id_number": "NIT",
+        "specific_tax_lang_key_EXAMPLE": "Specific language key example for taxary language"
+    }
+}

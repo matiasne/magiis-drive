@@ -1,0 +1,66 @@
+<ion-content scroll="false">
+
+  <div class="header-menu">
+    <span class="header-title">{{'travel_to_start.label_searching' | translate}}</span>
+  </div>
+
+  <div class="user-profile" (click)="showNameDisplay()">
+    <div style="display: flex; align-items: center;">
+      <img [src]="passengerImage ? passengerImage : 'assets/images/passenger_avatar_default_light_dark.png'" class="avatar">
+      <div class="passenger-info">
+        <span class="passenger-name">{{travel.passengerName}}</span>
+        <span class="passenger-id">{{travel.travelIdForCarrier}}</span>
+      </div>
+    </div>
+    <ion-icon name="chevron-forward"></ion-icon>
+  </div>
+
+  <div class="actions">
+    <div class="cancel action-container">
+      <span class="action-icon" (click)="openCancelTravelModal()">
+        <ion-icon name="close"></ion-icon>
+      </span>
+      <span class="label">cancelar</span>
+    </div>
+    <div style="display: flex;">
+      <div class="chat action-container" (click)="showChat()">
+        <span class="action-icon">
+          <ion-icon name="chatbubble-ellipses"></ion-icon>
+        </span>
+        <span class="label">{{ 'travel_in_progress.label_go_to_chat' | translate }}</span>
+      </div>
+      <div class="map action-container" (click)="showMap()">
+        <span class="action-icon">
+          <ion-icon name="map"></ion-icon>
+        </span>
+        <span class="label">{{ 'travel_in_progress.label_go_to_map' | translate }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="travel">
+    <div class="destinations">
+      <div class="dash-line"></div>
+      <div class="travel-origin" >
+        <ion-icon name="radio-button-on"></ion-icon>
+        <span class="adress" (click)="viewAddress(travel.fromName)">{{ travel.fromName }}</span>
+      </div>
+      <div class="travel-waypoint" *ngFor="let waypoint of travel.waypoints" >
+        <ion-icon name="radio-button-off"></ion-icon>
+        <span class="adress" (click)="viewAddress(waypoint.shortName)">{{ waypoint.shortName }}</span>
+      </div>
+      <div class="travel-destination">
+        <ion-icon name="location-outline"></ion-icon>
+        <span class="adress" (click)="viewAddress(travel.toName)">{{ travel.toName }}</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <span>{{ 'travel_to_start.label_note' | translate }}</span>
+      <p>{{travel.note}}</p>
+    </div>
+  </div>
+
+  <button class="btn primary" (click)="startTravel()">{{ 'travel_to_start.start_trip' | translate }}</button>
+
+</ion-content>

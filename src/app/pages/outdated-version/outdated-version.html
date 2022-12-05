@@ -1,0 +1,16 @@
+<ion-content scroll="false">
+  <div class="outdated-version-content">
+    <h1 class="title">{{ 'outdated_version.title' | translate }}</h1>
+    <p class="text">
+      {{ 'outdated_version.text' | translate }}
+    </p>
+
+    <div class="update-container">
+      <p class="aditional_info">
+        {{ 'outdated_version.info' | translate }}
+      </p>
+    </div>
+    <button (tap)="goToMarket()" class="btn primary">{{ 'outdated_version.update' | translate }}</button>
+    <button *ngIf="!required" (tap)="updateLater()" class="btn primary">{{ 'outdated_version.update_later' | translate }}</button>
+  </div>
+</ion-content>

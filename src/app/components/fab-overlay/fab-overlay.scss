@@ -1,0 +1,90 @@
+fab-overlay {
+  .fab-overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+    visibility: hidden;
+    opacity: 0;
+  }
+  .fab-show-overlay {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  .fab-hide-overlay {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .call-911 {
+    color: color($colors, light) !important;
+  }
+
+  ion-fab.call-fab {
+    position: absolute;
+    //top: -53px !important;
+    top: 4px !important;
+    .fab-md {
+      color: color($colors, primary);
+      background-color: color($colors, light);
+      width: 46px;
+      height: 46px;
+    }
+
+    .fab-ios {
+      background-color: color($colors, light);
+      color: color($colors, primary);
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+    }
+    .fab-ios.activated {
+      background-color: color($colors, light);
+    }
+
+    .fab-close-active .fab-close-icon {
+      color: color($colors, primary) !important;
+      font-size: 3rem;
+    }
+
+    .fab {
+      width: 46px;
+      height: 46px;
+    }
+
+    .bar {
+      height: 52px;
+    }
+
+    ion-fab-list {
+      right: 45px;
+    }
+
+    .call-911 {
+      color: color($colors, light);
+      background-image: radial-gradient(
+        circle,
+        color($colors, danger-light),
+        color($colors, danger)
+      );
+      font-weight: bold;
+      font-size: 1.7rem;
+    }
+
+    .call-carrier-img {
+      max-width: 122%;
+    }
+
+    .call-passenger {
+      background-color: color($colors, primary);
+    }
+
+    .call-passenger-img {
+      padding: 3px;
+    }
+  }
+}

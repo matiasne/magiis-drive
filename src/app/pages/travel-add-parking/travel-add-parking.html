@@ -1,0 +1,84 @@
+<ion-content class="no-scroll">
+  <ion-grid class="container">
+    <h2>{{ 'travel_add_parking.label_add_parking' | translate }}</h2>
+    <ion-row class="form-container">
+      <form [formGroup]="formParking">
+
+        <!-- Nombre -->
+        <div class="input-form">
+          <ion-item no-lines>
+            <ion-input placeholder="{{ 'travel_add_parking.label_form_name' | translate }} *" type="text" formControlName="nameParking" (ionChange)="updateView()"></ion-input>
+          </ion-item>
+          <div class="help-text">
+              {{ 'travel_add_parking.label_form_name_example' | translate }}
+            <ng-container *ngTemplateOutlet="nameError"></ng-container>
+          </div>
+        </div>
+
+        <!-- Monto -->
+        <div class="input-form">
+          <ion-item no-lines class="leading-icon">
+            <ion-input placeholder="{{ 'travel_add_parking.label_form_amount' | translate }} *" type="number" formControlName="priceParking" (ionChange)="updateView()"></ion-input>
+          </ion-item>
+          <div class="help-text">
+            {{ 'travel_add_parking.label_form_ammount_example' | translate }}
+            <ng-container *ngTemplateOutlet="priceError"></ng-container>
+          </div>
+        </div>
+
+        <!-- Foto -->
+        <div class="input-form">
+          <ion-button *ngIf="!imageBase64" class="button-upload-attach" (click)="takePicture()">
+            <ion-icon ios="ios-cloud-upload" md="md-cloud-upload" class="icon-upload"></ion-icon>
+            {{ 'travel_add_parking.label_form_ticket' | translate }}
+          </ion-button>
+
+          <div *ngIf="imageBase64" class="container-uploaded-images">
+            <div class="img-container">
+              <img class="uploaded-image" [src]="sanitize(imageBase64)">
+              <span class="delete-image" (click)="deletePicture()"><ion-icon name="trash" class="delete-icon"></ion-icon></span>
+            </div>
+          </div>
+
+          <div class="help-text">
+            <span>{{ 'travel_add_parking.label_form_ticket_example' | translate }}</span>
+          </div>
+
+
+        </div>
+
+
+      </form>
+    </ion-row>
+    <ion-row class="buttons">
+      <button class="btn"(click)="cancelNewParking()">
+        {{ 'travel_add_parking.label_button_cancel' | translate }}
+      </button>
+      <button class="btn primary" (click)="saveNewParking()" [disabled]="!formParking.valid">
+        {{ 'travel_add_parking.label_button_save' | translate }}
+      </button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- ERROR MESSAGES -->
+<ng-template #nameError>
+  <ng-container *ngIf="!nameParking.valid  && (nameParking.dirty || nameParking.touched)">
+    <div class="msg-error">
+      <span *ngIf="nameParking.errors?.pattern">{{ 'travel_add_parking.errors_name.pattern' | translate }}</span>
+      <span *ngIf="nameParking.errors?.required">{{ 'travel_add_parking.errors_name.required' | translate }}</span>
+      <span *ngIf="nameParking.errors?.maxlength">{{ 'travel_add_parking.errors_name.maxlength' | translate }}</span>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #priceError>
+  <ng-container *ngIf="!priceParking.valid  && (priceParking.dirty || priceParking.touched)">
+    <div class="msg-error">
+      <span *ngIf="priceParking.errors?.pattern">{{ 'travel_add_parking.errors_amount.pattern' | translate }}</span>
+      <span *ngIf="priceParking.errors?.required">{{ 'travel_add_parking.errors_amount.required' | translate }}</span>
+      <span *ngIf="priceParking.errors?.maxlength">{{ 'travel_add_parking.errors_amount.maxlength' | translate }}</span>
+    </div>
+  </ng-container>
+</ng-template>
+<!-- END ERROR MESSAGES -->

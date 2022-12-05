@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "driver-v21",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

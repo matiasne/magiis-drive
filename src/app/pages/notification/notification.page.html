@@ -1,0 +1,23 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-title>
+            Alertas
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card *ngFor="let notification of notificationsShow">
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <ion-thumbnail item-start>
+                        <ion-icon name="{{notification.icon}}"></ion-icon>
+                    </ion-thumbnail>
+                    <ion-label>{{notification.label}}</ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+<ion-footer>
+</ion-footer>

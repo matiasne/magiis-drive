@@ -1,0 +1,32 @@
+@import '../../../theme/variables.scss';
+
+.required-permission-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  color: $black;
+}
+
+.title {
+  font-size: $font24;
+  margin-top: 0;
+  font-weight: $bold;
+  margin-bottom: 16px;
+}
+
+.text {
+  font-size: $font16;
+  margin: 0;
+}
+
+.update-container {
+  margin-top: 24px;
+}
+
+.btn {
+  min-width: 180px;
+}
